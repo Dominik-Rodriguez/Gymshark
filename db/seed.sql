@@ -4,8 +4,6 @@ create table MenProduct(
     description varchar(255),
     img text,
     color varchar(50),
-    size varchar(20),
-    quantity int,
     price int
 )
 
@@ -15,19 +13,15 @@ create table WomenProduct(
     description varchar(255),
     img text,
     color varchar(50),
-    size varchar(20),
-    quantity int,
     price int
 )
 
-create table NewReleases(
+create table Accessories(
     item_id serial primary key,
     name varchar(255),
     description varchar(255),
     img text,
     color varchar(50),
-    size varchar(20),
-    quantity int,
     price int
 )
 

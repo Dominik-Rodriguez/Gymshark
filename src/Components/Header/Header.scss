@@ -1,0 +1,93 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    width:100%;
+    align-items: center;
+    border-bottom: 0.5px solid rgb(233, 233, 233);
+    img{
+        height: 46px;
+        width: 40px;
+        cursor: pointer;
+        margin-left: 30px;
+    }
+    a{
+        color: black;
+        text-decoration: none;
+    }
+
+    .Mens{
+        float: left;
+        margin-right: 30px;
+        font-size: 11px;
+        font-family:
+    }
+    .Mens:hover{
+        cursor: pointer;
+    }
+    .Mens:after {
+        display: flex;
+        content: '';
+        border-bottom: solid 3px black; 
+        transform: scaleX(0);  
+        transition: transform 250ms ease-in-out;
+      }
+      .Mens:hover:after { transform: scaleX(1); }
+      .Mens:fromRight:after{ transform-origin:100% 50%; }
+      .Mens:fromLeft:after{  transform-origin:  0% 50%; }
+
+    .Womens{
+        float: left;
+        margin-right: 30px;
+    }
+    .Womens:hover{
+        cursor: pointer;
+    }
+    .Womens:after {
+      display: flex;
+      content: '';
+      border-bottom: solid 3px black;  
+      transform: scaleX(0);  
+      transition: transform 250ms ease-in-out;
+    }
+    .Womens:hover:after { transform: scaleX(1); }
+    .Womens:fromRight:after{ transform-origin:100% 50%; }
+    .Womens:fromLeft:after{  transform-origin:  0% 50%; }
+
+    // .menu{
+    //   height: 100vh;
+    //   width: 438px;
+    //   background-color: red;
+    //   position: fixed;
+    // //   margin-top: 106vh;
+    //   //   left: -200px;
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: flex-start;
+    // }
+
+    .Accessories:hover{
+        cursor: pointer;
+    }
+    .Accessories:after {
+      display: flex;
+      content: '';
+      border-bottom: solid 3px black;  
+      transform: scaleX(0);  
+      transition: transform 250ms ease-in-out;
+    }
+    .Accessories:hover:after { transform: scaleX(1); }
+    .Accessories:fromRight:after{ transform-origin:100% 50%; }
+    .Accessories:fromLeft:after{  transform-origin:  0% 50%; }
+
+    .loginIcon{
+        height: 20px;
+        width: 20px;
+    }
+
+    .cartIcon{
+        height: 20px;
+        width: 20px;
+        margin-right: 20px;
+    }
+}
