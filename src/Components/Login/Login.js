@@ -8,7 +8,7 @@ class Login extends React.Component{
 
         this.state = {
             email: '',
-            username: '',
+            // username: '',
             password: '',
             verPassword: '',
             registerView: false
@@ -24,12 +24,12 @@ class Login extends React.Component{
     }
 
     handleRegister = () => {
-        const {email, username, password, verPassword} = this.state;
+        const {email, password, verPassword} = this.state;
         if(password && password === verPassword){
             axios
-                .post('/api/register', {email, username, password})
+                .post('/api/register', {email, password})
                 .then((res) => {
-                    this.props.getUser(res.data);
+                    // this.props.getUser(res.data);
                     this.props.history.push('/')
                 }) .catch((err) => console.log(err));
         } else {
@@ -42,7 +42,7 @@ class Login extends React.Component{
         axios
             .post('/api/login', {email, password})
             .then((res) => {
-                this.props.getUser(res.data);
+                // this.props.getUser(res.data);
                 this.props.history.push('/');
         });
     };
