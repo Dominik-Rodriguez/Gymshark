@@ -1,2 +1,3 @@
 select * from MenProduct
-limit 3;
+where description like 'GRADE HOODIE'
+limit 4;
