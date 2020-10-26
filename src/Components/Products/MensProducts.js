@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import {Link} from 'react-router-dom';
+import './MensProducts.scss';
 
 class MensProducts extends React.Component{
     constructor(){
@@ -23,17 +24,26 @@ class MensProducts extends React.Component{
 
     render(){
         const mappedProducts = this.state.products.map((product, i) => (
-            <Link to={`/product/${product.item_id}`}>
+            <Link to={`/product/${product.item_id}`} className="links">
                 <div className="productBox">
-                    <img src={product.img} alt="item image" />
-                    <p>{product.description}</p>
-                    <p>{product.color}</p>
-                    <h4>{product.price}</h4>
+                    <img src={product.img} alt="item image" className="productImg" />
+                    <div className="toptxt">
+                        <p className="description">{product.description}</p>
+                        <h4 className="price">${product.price}.00 USD</h4>
+                    </div>
+                    <p className="color">{product.color}</p>
                 </div>
             </Link>
         ))
         return(
             <div className="Products">
+                <div className="bannertxt">
+                    GYMSHARK
+                    <div className="bannertxt2">
+                        MENS
+                    </div>
+                </div>
+                <img src="https://gymsharkrepl.s3-us-west-1.amazonaws.com/bannerphotos/MensMainBanner1.jpg" alt="Mens product banner" className="MensMainBanner" />
                 {mappedProducts}
             </div>
         )

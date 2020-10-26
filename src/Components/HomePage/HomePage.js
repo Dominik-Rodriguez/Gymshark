@@ -39,7 +39,7 @@ class HomePage extends React.Component{
                         <div className="topProduct">
                             <p className='bar'>&#10074;</p> <p className="new">NEW</p>
                         </div>
-                        <h4 className="price">${product.price} USD</h4>
+                        <h4 className="price">${product.price}.00 USD</h4>
                     </div>
                     <p className="description">{product.description}</p>
                     <p className="color">{product.color}</p>
@@ -48,14 +48,14 @@ class HomePage extends React.Component{
         ))
 
         const mappedFemale = this.state.womensProducts.map((product, i) => (
-            <Link to={`/product/${product.item_id}`}>
+            <Link to={`/product/${product.item_id}`} className="links">
                 <div className="productBox">
                     <img src={product.img} alt="item image" className="productImg" />
                     <div className="newItem">
                         <div className="topProduct">
                             <p className='bar'>&#10074;</p> <p className="new">NEW</p>
                         </div>
-                        <h4 className="price">${product.price} USD</h4>
+                        <h4 className="price">${product.price}.00 USD</h4>
                     </div>
                     <p className="description">{product.description}</p>
                     <p className="color">{product.color}</p>
