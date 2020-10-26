@@ -32,7 +32,7 @@ class HomePage extends React.Component{
 
     render(){
         const mappedMale = this.state.mensProducts.map((product, i) => (
-            <Link to={`/product/${product.item_id}`}>
+            <Link to={`/product/${product.item_id}`} className="links">
                 <div className="productBox">
                     <img src={product.img} alt="item image" className="productImg" />
                     <div className="newItem">

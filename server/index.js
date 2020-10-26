@@ -33,6 +33,7 @@ app.get('/api/logout', authCtrl.logout);
 //products endpoints
 app.get('/api/mensproducts', prodCtrl.getMensProducts);
 app.get('/api/womensproducts', prodCtrl.getWomensProducts);
+app.get('/api/accessories', prodCtrl.getAccessories);
 
 //home endpoints
 app.get('/api/getMensProducts', homeCtrl.maleHomePage);

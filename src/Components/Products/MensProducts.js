@@ -45,6 +45,12 @@ class MensProducts extends React.Component{
                 </div>
                 <img src="https://gymsharkrepl.s3-us-west-1.amazonaws.com/bannerphotos/MensMainBanner1.jpg" alt="Mens product banner" className="MensMainBanner" />
                 {mappedProducts}
+                <div className="bottomtxt">
+                    <div className="Btxt">
+                        <h5>MEN'S WORKOUT CLOTHES</h5>
+                        <p>Explore all men's Gymshark clothing. Gym and fitness clothes designed to complement the hard work and dedication you put in your workouts.</p>
+                    </div>
+                </div>
             </div>
         )
     }
