@@ -35,9 +35,14 @@ class HomePage extends React.Component{
             <Link to={`/product/${product.item_id}`}>
                 <div className="productBox">
                     <img src={product.img} alt="item image" className="productImg" />
-                    <p>{product.description}</p>
-                    <p>{product.color}</p>
-                    <h4>{product.price}</h4>
+                    <div className="newItem">
+                        <div className="topProduct">
+                            <p className='bar'>&#10074;</p> <p className="new">NEW</p>
+                        </div>
+                        <h4 className="price">${product.price} USD</h4>
+                    </div>
+                    <p className="description">{product.description}</p>
+                    <p className="color">{product.color}</p>
                 </div>
             </Link>
         ))
@@ -46,9 +51,14 @@ class HomePage extends React.Component{
             <Link to={`/product/${product.item_id}`}>
                 <div className="productBox">
                     <img src={product.img} alt="item image" className="productImg" />
-                    <p>{product.description}</p>
-                    <p>{product.color}</p>
-                    <h4>{product.price}</h4>
+                    <div className="newItem">
+                        <div className="topProduct">
+                            <p className='bar'>&#10074;</p> <p className="new">NEW</p>
+                        </div>
+                        <h4 className="price">${product.price} USD</h4>
+                    </div>
+                    <p className="description">{product.description}</p>
+                    <p className="color">{product.color}</p>
                 </div>
             </Link>
         ))
@@ -93,6 +103,39 @@ class HomePage extends React.Component{
                 </div>
                 <div className="grid">
                     {mappedMale}
+                </div>
+                <div className="bottomBanners">
+                    <div className="MensBottomBannertxt">
+                        <div>
+                            <h2>SHOP</h2>
+                            <h2>MENS</h2>
+                            <Link to='/mensproducts'>
+                                <button>SHOP</button>
+                            </Link>
+                        </div>
+                    </div>
+                    <Link to="/mensproducts">
+                        <img src="https://gymsharkrepl.s3-us-west-1.amazonaws.com/bannerphotos/shopmenshomepage2.webp" alt="mens banner bottom" className="mensBottomBanner" />
+                    </Link>
+                    <div className="WomensBottomBannertxt">
+                        <div>
+                            <h2>SHOP</h2>
+                            <h2>WOMENS</h2>
+                            <Link to='/mensproducts'>
+                                <button>SHOP</button>
+                            </Link>
+                        </div>
+                    </div>
+                    <Link to="/womensproducts">
+                        <img src="https://gymsharkrepl.s3-us-west-1.amazonaws.com/bannerphotos/shopwomenshomepage2.webp" alt="Womens Bottom Banner" className="BottomBanner" />
+                    </Link>
+                </div> 
+                <div className="bottomtxt">
+                    <div className="Btxt">
+                        <h5>MORE THAN YOUR BEST WORKOUT CLOTHING</h5>
+                        <p>The Gymshark community is devoted to unlocking potential through conditioning and the things we do today to prepare for tomorrow. When it comes to performing at your max, there should be no obstacles – least of all your workout clothes. So everything about the gym clothes and accessories we design for you has your progress and the best results in mind. We want you to have the most comfortable gym hoodies, the most supportive seamless leggings and the most innovatively designed workout shirts that are made to move when it matters most.</p>
+                        <p>Game-changing workout clothing. It's not just in the designs, It's in the people that wear them</p>
+                    </div>
                 </div>
             </div>
         )

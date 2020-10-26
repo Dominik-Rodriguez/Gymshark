@@ -1,3 +1,3 @@
 select * from womenproduct
-where description like 'ADAPT CAMO SEAMLESS LONG SLEEVE CROP TOP'
+where description like 'adapt camo seamless long sleeve crop top'
 LIMIT 4;
