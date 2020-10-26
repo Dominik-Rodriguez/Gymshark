@@ -55,16 +55,16 @@ class Footer extends React.Component{
                         </div>
                     </div>
                     <div className="paymentlogos">
-                        <img src={creditCard} className="creditCard" />
-                        <img src={applePay} className="applePay" />
-                        <img src={visa} className="visa" />
-                        <img src={paypal} className="paypal" />
-                        <img src={americanExpress} className="americanExpress" />
+                        <img src={creditCard} className="creditCard" alt='card' />
+                        <img src={applePay} className="applePay" alt='card' />
+                        <img src={visa} className="visa" alt='card' />
+                        <img src={paypal} className="paypal" alt='card' />
+                        <img src={americanExpress} className="americanExpress" alt='card' />
                     </div>
                 </div>
                 <div className="right-container">
-                    <img src={gymsharkBlog} className="gymsharkBlog" />
-                    <p>Visit the <a href="">Gymshark Blog</a></p>
+                    <img src={gymsharkBlog} className="gymsharkBlog" alt='gymshark blog' />
+                    <p>Visit the <a href="https://www.gymshark.com/blogs/news">Gymshark Blog</a></p>
                     <h5>SIGN UP FOR OUR NEWSLETTER</h5>
                     <input type="text" placeholder="Your Email Address"/><button>></button>
                 </div>
