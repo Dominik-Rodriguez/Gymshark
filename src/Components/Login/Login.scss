@@ -1,0 +1,68 @@
+.loginPage{
+    display: flex;
+    justify-content: center;
+    font-family: "Montserrat",Helvetica,Arial,sans-serif;
+
+    .login{
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        text-align: left;
+
+        h3{
+            text-align: center;
+            // letter-spacing: 1px;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 0.025rem;
+        }
+
+        p{
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .loginbottomtxt{
+            text-align: center;
+            font-size: 12px;
+            color: #6e6e6e;
+        }
+
+        button{
+            margin-top: 10px;
+            border: none;
+            background-color: black;
+            color: white;
+            padding: 0.7vw 1.4vw;
+            border-radius: 5rem;
+            cursor: pointer;
+            font-size: 0.75vw;
+            font-weight: 700;
+            text-align: center;
+            width: 295px;
+        }
+
+        h5{
+            color: #6e6e6e;
+            margin-bottom: 0.2vw;
+            font-size: 11px;
+            padding: 0px 0px 5px
+        }
+
+        input{
+            padding: 16px 10px;
+            border: 0.5px solid rgb(233, 233, 233);
+            width: 272px;
+        }
+
+        span{
+            color: #007db5;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        span:hover{
+            cursor: pointer;
+        }
+    }
+}

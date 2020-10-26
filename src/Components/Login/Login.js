@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 // import {connect} from 'react-redux';
+import './Login.scss';
 
 class Login extends React.Component{
     constructor(props) {
@@ -65,7 +66,7 @@ class Login extends React.Component{
                         <input 
                             value={this.state.email}
                             name='email'
-                            placeholder='Email'
+                            // placeholder='Email'
                             className="email"
                             onChange={(e) => this.handleInput(e)}    
                         />
@@ -74,7 +75,7 @@ class Login extends React.Component{
                             value={this.state.password}
                             name='password'
                             type="password"
-                            placeholder="Password"
+                            // placeholder="Password"
                             className="password"
                             onChange={(e) => this.handleInput(e)}
                         />
@@ -86,13 +87,13 @@ class Login extends React.Component{
                                     type="password"
                                     value={this.state.verPassword}
                                     name="verPassword"
-                                    placeholder="Verify password"
+                                    // placeholder="Verify password"
                                     onChange={(e) => this.handleInput(e)}
                                 />
                                 <button onClick={this.handleRegister} className="login">
                                     CREATE ACCOUNT
                                 </button>
-                                <p>
+                                <p className="loginbottomtxt">
                                     Have an account? {" "}
                                     <span onClick={this.handleToggle} className='Link'>
                                         Login Here
@@ -104,8 +105,8 @@ class Login extends React.Component{
                                 <button onClick={this.handleLogin} className="login">
                                     LOGIN
                                 </button>
-                                <p className="login">
-                                    New to Gymshark?{" "}
+                                <p className="loginbottomtxt">
+                                    New to Gymshark? {" "}
                                     <span onClick={this.handleToggle} className="link">
                                         Creat An Account
                                     </span>
