@@ -1,0 +1,21 @@
+.Product{
+    // margin-top: 60px;
+    .productBox{
+        display: flex;
+        justify-content: space-around;
+
+        .productImage{
+            margin-top: 60px;
+            width: 55vw;
+        }
+
+        .productInfo{
+
+            .productName{
+                margin-top: 100px;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+}

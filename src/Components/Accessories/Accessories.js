@@ -12,7 +12,7 @@ class Accessories extends React.Component{
         }
     }
 
-    componentDidUpdate(){
+    componentDidMount(){
         this.getProducts();
     }
 
@@ -37,7 +37,7 @@ class Accessories extends React.Component{
         ))
         return(
             <div className="Products">
-                <div className="bannertxt">
+                <div className="bannertxt4">
                     GYMSHARK
                     <div className="bannertxt2">
                         ACCESSORIES

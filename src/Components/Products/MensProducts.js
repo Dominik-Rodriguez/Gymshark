@@ -24,7 +24,7 @@ class MensProducts extends React.Component{
 
     render(){
         const mappedProducts = this.state.products.map((product, i) => (
-            <Link to={`/product/${product.item_id}`} className="links">
+            <Link to={`/menproduct/${product.item_id}`} className="links">
                 <div className="productBox">
                     <img src={product.img} alt="item image" className="productImg" />
                     <div className="toptxt">

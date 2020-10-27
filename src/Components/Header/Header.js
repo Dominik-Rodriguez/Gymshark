@@ -20,7 +20,6 @@ class Header extends React.Component{
     }
 
     render(){
-        console.log(this.state.menu)
         return(
             <header className="Header">
                 <Link to='/'>
