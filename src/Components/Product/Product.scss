@@ -1,20 +1,164 @@
 .Product{
-    // margin-top: 60px;
+    font-family: "Montserrat",Helvetica,Arial,sans-serif;
+    .links{
+        text-decoration: none;
+        color: black;
+    }
     .productBox{
+        // position: sticky;
         display: flex;
         justify-content: space-around;
+        // margin-top: 300px;
+
+        .left-side{
+            // margin-top: 60px;
+
+            .hometxt{
+                text-align: left;
+                margin-top: 95px;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+                font-size: 1rem;
+                letter-spacing: 0.025rem;
+            }
+        }
 
         .productImage{
-            margin-top: 60px;
+            // margin-top: 60px;
             width: 55vw;
         }
 
+        .selectSize{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            .select{
+                color: #6e6e6e;
+                font-size: 1.1rem;
+            }
+            .sizeguide{
+                color: rbg(83, 86, 90);
+                font-size: 1.4rem;
+                font-weight: 500;
+            }
+        }
+
+        .addBtn{
+            background-color: #007db5;
+            color: white;
+            margin: 10px 0 0;
+            padding: 15px 30px;
+            width: 100%;
+            font-size: 1.2rem;
+            font-weight: 700;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50px;
+            border: none;
+        }
+
+        .addBtn:after{
+            margin-left: 9px;
+            width: 15px;
+            color: white;
+            content: url(https://gymsharkrepl.s3-us-west-1.amazonaws.com/icons/cartIconWhite2.svg);
+        }
+
+        .addBtn:hover{
+            cursor: pointer;
+        }
+
         .productInfo{
+            margin-top: 112px;
+            text-align: left;
 
             .productName{
-                margin-top: 100px;
                 text-transform: uppercase;
+                font-size: 1.3rem;
+                margin-bottom: 0.6rem;
+                color: #444444;
+                letter-spacing: 1px;
             }
+                
+            .currentColor{
+                text-transform: uppercase;
+                width: 100%;
+                border-top: 1px solid rgb(233, 233, 233);
+                padding-top: 10px;
+                font-size: 1.2rem;
+            }
+
+            .productDescription{
+                text-transform: uppercase;
+                font-size: 2rem;
+                font-weight: bold;
+                letter-spacing: 0.025rem;
+                line-height: 1.1;
+            }
+
+            .productPrice{
+                color: #444444;
+                font-size: 2rem;
+                margin-right: 1rem;
+
+            }
+
+            .sizes{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                .size{
+                    border: 1px solid #d4d4d4;
+                    background-color: white;
+                    line-height: 3.5rem;
+                    font-size: 1.2rem;
+                    text-align: center;
+                    margin: 0 0.5rem;
+                    text-transform: uppercase;
+                    transition: 0.2s all;
+                    // position: relative;
+                    width: 5vw;
+                }
+                .size:hover{
+                    background-color: black;
+                    color: white;
+                }
+
+                .size:focus{
+                    background-color: black;
+                    color: white;
+                }
+            }
+
+            .colorDisplay{
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                margin-bottom: -12px;
+
+                .likeProductPhotos{
+                    margin-bottom: 3px;
+                    margin-left: 2px;
+                    margin-right: 2px;
+
+                    .buttonToProd{
+                        border: none;
+                    }
+                    .likeProductImage{
+                        height: 6vw;
+                        width: 6vw;
+                    }
+
+                    .likeProductImage:hover{
+                        border: 1px solid black;
+                        cursor: pointer;
+                    }
+                }
+            }
+                
         }
     }
 

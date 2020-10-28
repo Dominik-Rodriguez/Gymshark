@@ -6,7 +6,7 @@ const express = require('express'),
       {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env,
       prodCtrl = require('./productControllers'),
       authCtrl = require('./logincontroller'),
-      homeCtrl = require('./homeController');
+      homeCtrl = require('./homeController'),
       app = express();
 app.use(express.json());
 
@@ -35,7 +35,8 @@ app.get('/api/mensproducts', prodCtrl.getMensProducts);
 app.get('/api/womensproducts', prodCtrl.getWomensProducts);
 app.get('/api/accessories', prodCtrl.getAccessories);
 app.get('/api/menproduct/:id', prodCtrl.getProduct);
-app.get('/api/menlikeproducts', prodCtrl.getMensLikeProducts);
+app.get('/api/menlikeproducts/:description', prodCtrl.getMensLikeProducts);
+app.get('/api/mendifferentProduct/:id', prodCtrl.getMenDifferentProduct);
 
 //home endpoints
 app.get('/api/getMensProducts', homeCtrl.maleHomePage);

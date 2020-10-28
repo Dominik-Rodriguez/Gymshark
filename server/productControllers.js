@@ -32,8 +32,16 @@ module.exports = {
         const {description} = req.params;
         const db = req.app.get('db');
 
-        db.setup.getMensLikeProducts({description})
+        db.Products.getMensLikeProducts({description})
         .then(products => res.status(200).send(products))
+        .catch(err => res.status(500).send(err));
+    },
+    getMenDifferentProduct: (req, res) => {
+        const {id} = req.params;
+        const db = req.app.get('db');
+
+        db.Products.getMenDifferentProduct({id})
+        .then(product => res.status(200).send(product[0]))
         .catch(err => res.status(500).send(err));
     }
 }
