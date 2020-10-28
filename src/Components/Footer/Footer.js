@@ -46,11 +46,9 @@ class Footer extends React.Component{
                         <div className="myAccount">
                             <h5>MY ACCOUNT</h5>
                             <ul>
-                                {/* THESE ARE ALSO INTERAL USE */}
-                                <Link to="/Login">
+                                <Link to="/Login" className="links">
                                     <li>Login</li>
                                 </Link>
-                                {/* <li>Register</li> */}
                             </ul>
                         </div>
                     </div>
@@ -66,7 +64,7 @@ class Footer extends React.Component{
                     <img src={gymsharkBlog} className="gymsharkBlog" alt='gymshark blog' />
                     <p>Visit the <a href="https://www.gymshark.com/blogs/news">Gymshark Blog</a></p>
                     <h5>SIGN UP FOR OUR NEWSLETTER</h5>
-                    <input type="text" placeholder="Your Email Address"/><button>></button>
+                    <input type="text" placeholder="Your Email Address" className="emailInput"/><button className="blogBtn">></button>
                 </div>
             </footer>
         )

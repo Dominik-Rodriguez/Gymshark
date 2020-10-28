@@ -27,7 +27,6 @@ class Header extends React.Component{
                 </Link>
                 {/* desktop view */}
                 <nav className="tablet-header">
-                    {/* <button className="navBtn" onClick={this.slide}>&#9776;</button> */}
                     <div className="navbar-menu">
                         <Link to="/mensproducts">
                             <a href="" className="Mens">MENS</a>
