@@ -27,7 +27,7 @@ module.exports = {
         const {id} = req.params;
         const db = req.app.get('db');
 
-        db.setup.getProduct({id})
+        db.Products.getProduct({id})
         .then(product => res.status(200).send(product[0]))
         .catch(err => res.status(500).send(err));
     },
