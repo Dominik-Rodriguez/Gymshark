@@ -37,6 +37,12 @@ app.get('/api/accessories', prodCtrl.getAccessories);
 app.get('/api/menproduct/:id', prodCtrl.getProduct);
 app.get('/api/menlikeproducts/:description', prodCtrl.getMensLikeProducts);
 app.get('/api/mendifferentProduct/:id', prodCtrl.getMenDifferentProduct);
+app.get('/api/womenproduct/:id', prodCtrl.getWomenProduct);
+app.get('/api/womenlikeproduct/:description', prodCtrl.getWomensLikeProduct);
+app.get('/api/womendifferentProduct/:id', prodCtrl.getWomenDifferentProduct);
+app.get('/api/Accessory/:id', prodCtrl.getAccessory);
+app.get('/api/differentAccessory/:id', prodCtrl.getDifferentAccessory);
+app.get('/api/LikeAccessories/:description', prodCtrl.LikeAccessories);
 
 //home endpoints
 app.get('/api/getMensProducts', homeCtrl.maleHomePage);

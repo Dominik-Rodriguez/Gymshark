@@ -8,6 +8,7 @@ import Login from './Components/Login/Login';
 import WomensProducts from './Components/Products/WomensProducts';
 import Accessories from './Components/Accessories/Accessories';
 import WomenProduct from './Components/WomenProduct/WomenProduct';
+import Accessory from './Components/Accessories/Accessory';
 
 export default(
     <Switch>
@@ -17,6 +18,7 @@ export default(
         <Route path='/accessories' component={Accessories} />
         <Route path='/menproduct/:id' component={Product} />
         <Route path='/womenproduct/:id' component={WomenProduct} />
+        <Route path='/accessory/:id' component={Accessory} />
         <Route path='/cart' component={Cart} />
         <Route path="/Login" component={Login}/> 
     </Switch>

@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import './WomenProduct.scss';
+import './Accessory.scss';
 import {Link} from 'react-router-dom';
 
 class Product extends React.Component{
@@ -19,7 +19,7 @@ class Product extends React.Component{
     }
 
     getProduct = () => {
-        axios.get(`/api/womenproduct/${this.props.match.params.id}`)
+        axios.get(`/api/Accessory/${this.props.match.params.id}`)
         .then(res => this.setState({product: res.data}, () => {
             this.getLikeProducts();
         }))
@@ -28,13 +28,13 @@ class Product extends React.Component{
 
     getDifferentProduct = (i) => {
         const target_id = this.state.likeProducts[i].item_id;
-        axios.get(`/api/womendifferentProduct/${target_id}`)
+        axios.get(`/api/differentAccessory/${target_id}`)
         .then(res => this.setState({product: res.data}))
         .catch(err => console.log(err));
     }
     
     getLikeProducts = () => {
-        axios.get(`/api/womenlikeproduct/${this.state.product.description}`)
+        axios.get(`/api/LikeAccessories/${this.state.product.description}`)
         .then(res =>this.setState({likeProducts: res.data}))
         .catch(err => console.log(err));
     }
