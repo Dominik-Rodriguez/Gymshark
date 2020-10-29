@@ -1,17 +1,21 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 class Cart extends React.Component{
-    // constructor(){
-    //     super();
-    // }
+    constructor(props){
+        super(props);
+    }
 
     render(){
+        console.log(this.props)
         return(
-            <div>
-                Cart
+            <div className="Cart">
+                
             </div>
         )
     }
 }
 
-export default Cart;
+const mapStateToProps = (reduxState) => reduxState;
+
+export default connect(mapStateToProps, null)(Cart);

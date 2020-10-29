@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import './Product.scss';
 import {Link} from 'react-router-dom';
+import {addToCart} from '../../redux/reducer';
+import {connect} from 'react-redux';
 
 class Product extends React.Component{
     constructor(props){
@@ -10,7 +12,12 @@ class Product extends React.Component{
         this.state = {
             product: {},
             likeProducts: [],
-            size: ''
+            item:{
+                quantity: 0,
+                item_id: 0,
+                price: 0,
+                size: ''
+            }
         }
     }
 
@@ -38,6 +45,40 @@ class Product extends React.Component{
         .then(res =>this.setState({likeProducts: res.data}))
         .catch(err => console.log(err));
     }
+
+    setS = () => {
+        this.state.item.size = 'small';
+    }
+
+    setM = () => {
+        this.state.item.size = 'medium';
+
+    }
+
+    setL = () => {
+        this.state.item.size = 'large';
+    }
+
+    setXL = () => {
+        this.state.item.size = 'extra-large';
+    }
+
+    setXXL = () => {
+        this.state.item.size = '2x-large';
+    }
+
+    setValues = () => {
+        const {quantity, item_id, price} = this.state.item;
+        // const {item_id, price} = this.state.product;
+        quantity = quantity + 1;
+        item_id = this.state.product.item_id;
+        price = this.state.product.price;
+        console.log(this.state.item);
+    }
+
+    addItem = () => {
+        this.props.addToCart({...this.state.item})
+    }
     
     render(){
         const {color, description, img, item_id, name, price} = this.state.product;
@@ -47,7 +88,7 @@ class Product extends React.Component{
                     <a><img src={product.img} alt="item like image" className="likeProductImage" onClick={()=>{this.getDifferentProduct(i)}} /> </a>
                 </div>
         ))
-        
+        console.log(this.state.item);
         return(
             <div className="Product">
                 <div className="productBox">
@@ -68,13 +109,13 @@ class Product extends React.Component{
                             <p className="sizeguide">Size Guide</p>
                         </div>
                         <div className="sizes">
-                            <button className="size">S</button>
-                            <button className="size">M</button>
-                            <button className="size">L</button>
-                            <button className="size">XL</button>
-                            <button className="size">XXL</button>
+                            <button onClick={this.setS} className="size">S</button>
+                            <button onClick={this.setM} className="size">M</button>
+                            <button onClick={this.setL} className="size">L</button>
+                            <button onClick={this.setXL} className="size">XL</button>
+                            <button onClick={this.setXXL} className="size">XXL</button>
                         </div>
-                        <button className="addBtn">ADD</button>
+                        <button onClick={this.setValues, this.addItem} className="addBtn">ADD</button>
                     </div>
                 </div>
             </div>
@@ -82,4 +123,4 @@ class Product extends React.Component{
     }
 }
 
-export default Product;
+export default  connect(null, {addToCart})(Product);
