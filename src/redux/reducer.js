@@ -1,5 +1,7 @@
 // import { bindActionCreators } from "redux";
 
+import { $CombinedState } from "redux";
+
 const initialState = {
     cart: {
         items: [
@@ -98,18 +100,25 @@ const reducer = (state = initialState, action) => {
             }
 
         case ADD_TO_CART:
+            //setting a temp cart
             updatedCart = {...state.cart};
+            //finding the correct index to operate in
             updatedItemIndex = updatedCart.items.find((item) => {
                 return item.item_id === payload;
             })
 
-            if(updatedItemIndex < 0){
-                updatedCart.push({...action.payload, quantity: 1})
+            //setting up the begginning of 
+            if(updatedItemIndex < 1){
+                updatedCart.items.push({...action.payload, quantity: 1})
+                console.log('I am updatedCart.items')
+                console.log(updatedCart.items);
             } else {
                 const updatedItem = {
                     ...updatedCart.items[updatedItemIndex]
                     // ...updatedCart[updatedItemIndex]
                 };
+                console.log('UpdatedItem');
+                console.log(updatedItem)
             
             updatedItem.quantity++;
             updatedCart[updatedItemIndex] = updatedItem;
