@@ -15,6 +15,7 @@ const initialState = {
     }
 }
 
+
 //action types
 const GET_CART = 'GET_CART',
       CLEAR_ITEM = 'CLEAR_ITEM',
@@ -97,7 +98,7 @@ const reducer = (state = initialState, action) => {
             }
 
         case ADD_TO_CART:
-            updatedCart = [...state.cart];
+            updatedCart = {...state.cart};
             updatedItemIndex = updatedCart.items.find((item) => {
                 return item.item_id === payload;
             })
@@ -114,11 +115,14 @@ const reducer = (state = initialState, action) => {
             updatedCart[updatedItemIndex] = updatedItem;
             }
             updatedCart.totalNumItems += 1;
+
+            console.log('I am updatedCart');
+            console.log(updatedCart);
             
             return{...state, cart: updatedCart}
         
         case CLEAR_ITEM:
-            updatedCart = [...state.cart];
+            updatedCart = {...state.cart};
             updatedItemIndex = updatedCart.find((item) => {
                 return item.item_id === payload;
             });

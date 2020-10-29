@@ -68,15 +68,16 @@ class Product extends React.Component{
     }
 
     setValues = () => {
-        const {quantity, item_id, price} = this.state.item;
-        // const {item_id, price} = this.state.product;
-        quantity = quantity + 1;
-        item_id = this.state.product.item_id;
-        price = this.state.product.price;
+        this.state.item.quantity = this.state.item.quantity + 1;
+        this.state.item.item_id = this.state.product.item_id;
+        this.state.item.price = this.state.product.price;
+        this.addItem();
         console.log(this.state.item);
     }
 
     addItem = () => {
+        console.log('This is linked to add item');
+        console.log(this.state.item);
         this.props.addToCart({...this.state.item})
     }
     
@@ -88,7 +89,7 @@ class Product extends React.Component{
                     <a><img src={product.img} alt="item like image" className="likeProductImage" onClick={()=>{this.getDifferentProduct(i)}} /> </a>
                 </div>
         ))
-        console.log(this.state.item);
+        // console.log(this.state.item);
         return(
             <div className="Product">
                 <div className="productBox">
@@ -115,7 +116,7 @@ class Product extends React.Component{
                             <button onClick={this.setXL} className="size">XL</button>
                             <button onClick={this.setXXL} className="size">XXL</button>
                         </div>
-                        <button onClick={this.setValues, this.addItem} className="addBtn">ADD</button>
+                        <button onClick={this.setValues} className="addBtn">ADD</button>
                     </div>
                 </div>
             </div>
