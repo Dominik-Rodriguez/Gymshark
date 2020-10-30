@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import "./Product.scss";
 import { Link } from "react-router-dom";
-import { addToCart } from "../../redux/reducer";
+import { addToCart, decreaseQuantity } from "../../redux/reducer";
 import { connect } from "react-redux";
 
 class Product extends React.Component {
@@ -24,8 +24,7 @@ class Product extends React.Component {
     axios
       .get(`/api/menproduct/${this.props.match.params.id}`)
       .then((res) =>{    
-        // console.log(res.data)
-        this.setState({ product: res.data, item:{...res.data, quantity: 1} }, () => {
+        this.setState({ product: res.data, item: {...res.data, quantity: 1} }, () => {
           this.getLikeProducts();
         })}
       )
@@ -36,7 +35,7 @@ class Product extends React.Component {
     const target_id = this.state.likeProducts[i].item_id;
     axios
       .get(`/api/mendifferentProduct/${target_id}`)
-      .then((res) => this.setState({ product: res.data }))
+      .then((res) => this.setState({ product: res.data, item: {...res.data, quantity: 1} }))
       .catch((err) => console.log(err));
   };
 
@@ -77,7 +76,7 @@ class Product extends React.Component {
         item_id: productItem_id,
         price: productPrice,
       },
-    });
+    }, () => console.log(this.state));
     this.addItem();
   };
 
@@ -161,4 +160,4 @@ class Product extends React.Component {
 
 const mapPropsToState = (reduxState) => reduxState;
 
-export default connect(mapPropsToState, { addToCart })(Product);
+export default connect(mapPropsToState, { addToCart },)(Product);

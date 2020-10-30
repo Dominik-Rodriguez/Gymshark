@@ -7,14 +7,24 @@ import applePay from '../../icons/apple-pay.svg';
 import visa from '../../icons/visa.png';
 import paypal from '../../icons/paypal.png';
 import americanExpress from '../../icons/americanexpress.png';
+import {decreaseQuantity, increaseQuantity, clearItem} from '../../redux/reducer';
 
 class Cart extends React.Component{
     constructor(props){
         super(props);
     }
 
+    decrease = (id) => {
+        this.props.decreaseQuantity(id);
+    }
+
+    increase = (id) => {
+        this.props.increaseQuantity(id);
+    }
+
     render(){
-        console.log(this.props)
+        // console.log(this.props.decreaseQuantity();)
+        console.log(this.props);
         const mappedItems = this.props.cart.items.map((product, i) => (
                 <tr>
                     <td className="totalColumn">
@@ -36,11 +46,11 @@ class Cart extends React.Component{
                     <td className="tdModify">
                         <div className="quantityModify">
                             <div className="btnsContainer">
-                                <button>-</button>
+                                <button onClick={() => this.decrease(product.item_id)}>-</button>
                                 <div className="quantityNum">{product.quantity}</div>
-                                <button>+</button>
+                                <button onClick={() => this.increase(product.item_id)}>+</button>
                             </div>
-                            <div className="remove">Remove</div>
+                            <a className="removeLink"><div className="remove">Remove</div></a>
                         </div>
                     </td>
                     <td className="PriceColumn">
@@ -94,4 +104,4 @@ class Cart extends React.Component{
 
 const mapStateToProps = (reduxState) => reduxState;
 
-export default connect(mapStateToProps, )(Cart);
+export default connect(mapStateToProps, {decreaseQuantity, increaseQuantity, clearItem})(Cart);

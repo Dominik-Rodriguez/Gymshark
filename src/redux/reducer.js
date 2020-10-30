@@ -27,6 +27,7 @@ export function increaseQuantity(item_id){
 }
 
 export function decreaseQuantity(item_id){
+
     return{
         type: DECREASE_QUANTITY,
         payload: item_id
@@ -47,21 +48,6 @@ export function clearItem(item_id){
     }
 }
 
-// export function getCart(){
-//     return{
-//         type: GET_CART,
-//         payload: item_id
-//     }
-// }
- 
-
-// export function clearCart(){
-//     return{
-//         type: CLEAR_CART,
-//         payload: item_id
-//     }
-// }
-
 const reducer = (state = initialState, action) => {
     const {type, payload} = action;
     let updatedCart;
@@ -70,32 +56,39 @@ const reducer = (state = initialState, action) => {
     switch (type) {
         case INCREASE_QUANTITY:
             updatedCart = {...state.cart};
-            updatedItemIndex = updatedCart.items.find((item) => {
-                return item.item_id === payload;
+            updatedItemIndex = state.cart.items.findIndex((item) => {
+                return payload === item.item_id;
             })
-            updatedItemIndex.quantity += 1;
-            updatedCart.totalNumItems += 1;
+            let [updateItem] = state.cart.items.splice(updatedItemIndex, 1);
+            updateItem.quantity += 1;
             return{
-                ...state,
-                cart: updatedCart
+                ...state, cart:{
+                    items: [
+                        ...state.cart.items, updateItem
+                    ],
+                    totalPrice: state.cart.totalPrice + updateItem.price,
+                    totalNumItems: state.cart.totalNumItems + 1
+                }
             }
 
         case DECREASE_QUANTITY:
             updatedCart = {...state.cart};
-            // updatedItemIndex = updatedCart.findIndex(item => item.item_id === payload.item_id);
-            updatedItemIndex = updatedCart.items.find((item) => {
-                return updatedCart.items.item_id === payload.item_id;
+            updatedItemIndex = state.cart.items.findIndex((item) => {
+                return payload === item.item_id;
             })
-            updatedItemIndex.quantity -= 1;
-            updatedCart.totalNumItems -=1;
+            let [updatedItem] = state.cart.items.splice(updatedItemIndex, 1);
+            updatedItem.quantity -= 1;
             return{
-                ...state,
-                cart: updatedCart
+                ...state, cart:{
+                    items: [
+                        ...state.cart.items, updatedItem
+                    ],
+                    totalPrice: state.cart.totalPrice - updatedItem.price,
+                    totalNumItems: state.cart.totalNumItems - 1
+                }
             }
 
         case ADD_TO_CART:
-            // console.log('/////')
-            // console.log({payload});
             //setting a temp cart
             updatedCart = {...state.cart};
             //finding the correct index to operate in
@@ -115,7 +108,6 @@ const reducer = (state = initialState, action) => {
             } else {
                 let [updatedItem] = state.cart.items.splice(updatedItemIndex, 1);
                 updatedItem.quantity += 1;
-                // console.log(updatedItem);
                 return {
                     ...state, cart: {
                         items: [...state.cart.items, updatedItem],

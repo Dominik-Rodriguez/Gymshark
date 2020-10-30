@@ -46,7 +46,7 @@
             text-align: left;
             display: table-cell;
             border: 1px solid #eee;
-            width: 50vw;
+            width: 65vw;
             .itemInfo{
                 .CartImg{
                     width: 10vw;
@@ -125,6 +125,9 @@
                     font-size: 1.2rem;
                     margin-top: .5rem;
                 }
+                .removeLink{
+                    cursor: pointer;
+                }
             }
         }
 
@@ -146,6 +149,9 @@
             border: 1px solid #eee;
             .links{
                 color: #6e6e6e;
+            }
+            .links:hover{
+                cursor: pointer;
             }
             text-align: left;
             p{
