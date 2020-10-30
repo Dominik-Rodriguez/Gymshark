@@ -4,7 +4,8 @@ import {Link} from 'react-router-dom';
 import './Header.scss';
 import gymsharkIcon from '../../icons/gymshark.svg';
 import loginIcon from '../../icons/SVG/loginIcon.svg';
-import cartIcon from '../../icons/SVG/cartIcon.svg';
+import cartIconWider from '../../icons/SVG/cartIconWider.svg';
+import {connect} from 'react-redux';
 
 class Header extends React.Component{
     constructor(){
@@ -15,11 +16,16 @@ class Header extends React.Component{
         }
     }
 
+    // componentDidUpdate(){
+    //     console.log(this.props.cart.totalNumItems);
+    // }
+
     slide = () => {
         this.setState({menu: !this.state.menu})
     }
 
     render(){
+        // console.log(this.props.cart.totalNumItems);
         return(
             <header className="Header">
                 <Link to='/'>
@@ -45,7 +51,8 @@ class Header extends React.Component{
                         <img src={loginIcon} alt="login" className="loginIcon" /> 
                     </Link>
                     <Link to='/cart'>
-                        <img src={cartIcon} alt='cart' className='cartIcon' />
+                        <div className="CartCount">{this.props.cart.totalNumItems}</div>
+                        <img src={cartIconWider} alt='cart' className='cartIcon' />
                     </Link>
                 </div>
 
@@ -61,4 +68,6 @@ class Header extends React.Component{
     }
 }
 
-export default Header;
+const mapPropsToState = (reduxState) => reduxState;
+
+export default connect(mapPropsToState, null)(Header);

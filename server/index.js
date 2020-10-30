@@ -23,6 +23,7 @@ massive({
 }).then(db => {
     app.set('db', db);
     console.log('You are connected to a db');
+    app.listen(SERVER_PORT, () => console.log(`Server is on ${SERVER_PORT}`))
 });
 
 //auth endpoints
@@ -54,5 +55,3 @@ app.get('/api/LikeAccessories/:description', prodCtrl.LikeAccessories);
 //home endpoints
 app.get('/api/getMensProducts', homeCtrl.maleHomePage);
 app.get('/api/getWomensProducts', homeCtrl.femaleHomePage);
-
-app.listen(SERVER_PORT, () => console.log(`Server is on ${SERVER_PORT}`))

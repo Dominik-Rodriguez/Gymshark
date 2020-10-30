@@ -4,14 +4,7 @@ import { $CombinedState } from "redux";
 
 const initialState = {
     cart: {
-        items: [
-            {
-                quantity: 0,
-                item_id: 0,
-                price: 0,
-                size: ''
-            }
-        ],
+        items: [],
         totalPrice: 0,
         totalNumItems: 0
     }
@@ -89,8 +82,9 @@ const reducer = (state = initialState, action) => {
 
         case DECREASE_QUANTITY:
             updatedCart = {...state.cart};
+            // updatedItemIndex = updatedCart.findIndex(item => item.item_id === payload.item_id);
             updatedItemIndex = updatedCart.items.find((item) => {
-                return item.item_id === payload;
+                return updatedCart.items.item_id === payload.item_id;
             })
             updatedItemIndex.quantity -= 1;
             updatedCart.totalNumItems -=1;
@@ -100,35 +94,36 @@ const reducer = (state = initialState, action) => {
             }
 
         case ADD_TO_CART:
+            // console.log('/////')
+            // console.log({payload});
             //setting a temp cart
             updatedCart = {...state.cart};
             //finding the correct index to operate in
-            updatedItemIndex = updatedCart.items.find((item) => {
-                return item.item_id === payload;
+            updatedItemIndex = state.cart.items.findIndex((item) => {
+                console.log(payload.item_id, item.item_id);
+                return payload.item_id === item.item_id;
             })
 
-            //setting up the begginning of 
-            if(updatedItemIndex < 1){
-                updatedCart.items.push({...action.payload, quantity: 1})
-                console.log('I am updatedCart.items')
-                console.log(updatedCart.items);
+            if(updatedItemIndex < 0){
+                return {
+                    ...state, cart: {
+                        items: [...state.cart.items, payload],
+                        totalPrice: state.cart.totalPrice + payload.price,
+                        totalNumItems: state.cart.totalNumItems + 1 
+                    }
+                }
             } else {
-                const updatedItem = {
-                    ...updatedCart.items[updatedItemIndex]
-                    // ...updatedCart[updatedItemIndex]
-                };
-                console.log('UpdatedItem');
-                console.log(updatedItem)
-            
-            updatedItem.quantity++;
-            updatedCart[updatedItemIndex] = updatedItem;
+                let [updatedItem] = state.cart.items.splice(updatedItemIndex, 1);
+                updatedItem.quantity += 1;
+                // console.log(updatedItem);
+                return {
+                    ...state, cart: {
+                        items: [...state.cart.items, updatedItem],
+                        totalPrice: state.cart.totalPrice + payload.price,
+                        totalNumItems: state.cart.totalNumItems + 1 
+                    }
+                }
             }
-            updatedCart.totalNumItems += 1;
-
-            console.log('I am updatedCart');
-            console.log(updatedCart);
-            
-            return{...state, cart: updatedCart}
         
         case CLEAR_ITEM:
             updatedCart = {...state.cart};
