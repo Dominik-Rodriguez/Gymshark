@@ -22,9 +22,11 @@ class Cart extends React.Component{
         this.props.increaseQuantity(id);
     }
 
+    remove = (id) => {
+        this.props.clearItem(id);
+    }
+
     render(){
-        // console.log(this.props.decreaseQuantity();)
-        console.log(this.props);
         const mappedItems = this.props.cart.items.map((product, i) => (
                 <tr>
                     <td className="totalColumn">
@@ -50,7 +52,7 @@ class Cart extends React.Component{
                                 <div className="quantityNum">{product.quantity}</div>
                                 <button onClick={() => this.increase(product.item_id)}>+</button>
                             </div>
-                            <a className="removeLink"><div className="remove">Remove</div></a>
+                            <a className="removeLink" onClick={() => this.remove(product.item_id)}><div className="remove">Remove</div></a>
                         </div>
                     </td>
                     <td className="PriceColumn">
@@ -61,44 +63,54 @@ class Cart extends React.Component{
                 </tr>
         ))
 
-        console.log(this.props)
-
-        return(
-            <div className="Cart">
-                <h1>SHOPPING CART</h1>
-                <table className="itemsTable">
-                    <tr className="tableHeaders">
-                        <th className="tableHeaderItems">ITEMS</th>
-                        <th>QUANTITY</th>
-                        <th>SUBTOTAL</th>
-                    </tr>
-                    {mappedItems}
-                    <tr className="tableBottom">
-                        <td>
-                            <Link to='/' className="links">
-                                <p>Continue Shopping</p>
-                            </Link>
-                        </td>
-                        <td>
-                            <h3>TOTAL</h3>
-                        </td>
-                        <td>
-                            <h3 className="tableBottomPrice">${this.props.cart.totalPrice}.00 USD</h3>
-                        </td>
-                    </tr>
-                </table>
-                <div className="footer">
-                    <div className="paymentlogos">
-                        <img src={creditCard} className="creditCard" alt='card' />
-                        <img src={applePay} className="applePay" alt='card' />
-                        <img src={visa} className="visa" alt='card' />
-                        <img src={paypal} className="paypal" alt='card' />
-                        <img src={americanExpress} className="americanExpress" alt='card' />
-                    </div>
-                    <button className="checkout">CHECK OUT</button>
+        if(this.props.cart.totalNumItems === 0){
+            return(
+                <div className="alternateView">
+                    <h1>SHOPPING CART</h1>
+                    <p>Your cart is currently empty. <br></br>
+                    Continue browsing <Link to="/" className="links">here.</Link></p>
+                    
                 </div>
-            </div>
-        )
+            )
+        }
+        else{
+            return(
+                <div className="Cart">
+                    <h1>SHOPPING CART</h1>
+                    <table className="itemsTable">
+                        <tr className="tableHeaders">
+                            <th className="tableHeaderItems">ITEMS</th>
+                            <th>QUANTITY</th>
+                            <th>SUBTOTAL</th>
+                        </tr>
+                        {mappedItems}
+                        <tr className="tableBottom">
+                            <td>
+                                <Link to='/' className="links">
+                                    <p>Continue Shopping</p>
+                                </Link>
+                            </td>
+                            <td>
+                                <h3>TOTAL</h3>
+                            </td>
+                            <td>
+                                <h3 className="tableBottomPrice">${this.props.cart.totalPrice}.00 USD</h3>
+                            </td>
+                        </tr>
+                    </table>
+                    <div className="footer">
+                        <div className="paymentlogos">
+                            <img src={creditCard} className="creditCard" alt='card' />
+                            <img src={applePay} className="applePay" alt='card' />
+                            <img src={visa} className="visa" alt='card' />
+                            <img src={paypal} className="paypal" alt='card' />
+                            <img src={americanExpress} className="americanExpress" alt='card' />
+                        </div>
+                        <button className="checkout">CHECK OUT</button>
+                    </div>
+                </div>
+            )
+        }
     }
 }
 

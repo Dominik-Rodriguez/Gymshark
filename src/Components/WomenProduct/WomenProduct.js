@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import './WomenProduct.scss';
 import {Link} from 'react-router-dom';
+import { addToCart } from "../../redux/reducer";
+import { connect } from "react-redux";
 
 class Product extends React.Component{
     constructor(props){
@@ -10,7 +12,7 @@ class Product extends React.Component{
         this.state = {
             product: {},
             likeProducts: [],
-            size: ''
+            item: {}
         }
     }
 
@@ -20,7 +22,7 @@ class Product extends React.Component{
 
     getProduct = () => {
         axios.get(`/api/womenproduct/${this.props.match.params.id}`)
-        .then(res => this.setState({product: res.data}, () => {
+        .then(res => this.setState({product: res.data, item: {...res.data, quantity: 1}}, () => {
             this.getLikeProducts();
         }))
         .catch(err => console.log(err));
@@ -28,8 +30,9 @@ class Product extends React.Component{
 
     getDifferentProduct = (i) => {
         const target_id = this.state.likeProducts[i].item_id;
-        axios.get(`/api/womendifferentProduct/${target_id}`)
-        .then(res => this.setState({product: res.data}))
+        axios
+        .get(`/api/womendifferentProduct/${target_id}`)
+        .then(res => this.setState({product: res.data, item: {...res.data, quantity: 1}}))
         .catch(err => console.log(err));
     }
     
@@ -38,6 +41,44 @@ class Product extends React.Component{
         .then(res =>this.setState({likeProducts: res.data}))
         .catch(err => console.log(err));
     }
+
+    setS = () => {
+        this.setState({ item: { ...this.state.item, size: "small" } });
+      };
+    
+      setM = () => {
+        this.setState({ item: { ...this.state.item, size: "medium" } });
+      };
+    
+      setL = () => {
+        this.setState({ item: { ...this.state.item, size: "large" } });
+      };
+    
+      setXL = () => {
+        this.setState({ item: { ...this.state.item, size: "extra-large" } });
+      };
+    
+      setXXL = () => {
+        this.setState({ item: { ...this.state.item, size: "2x-large" } });
+      };
+
+      setValues = () => {
+        let productItem_id = this.state.product.item_id;
+        let productPrice = this.state.product.price;
+        this.setState({
+          item: {
+            ...this.state.item,
+            quantity: 1,
+            item_id: productItem_id,
+            price: productPrice,
+          },
+        }, () => console.log(this.state));
+        this.addItem();
+      };
+
+      addItem = () => {
+        this.props.addToCart({ ...this.state.item });
+      };
     
     render(){
         const {color, description, img, item_id, name, price} = this.state.product;
@@ -68,13 +109,25 @@ class Product extends React.Component{
                             <p className="sizeguide">Size Guide</p>
                         </div>
                         <div className="sizes">
-                            <button className="size">S</button>
-                            <button className="size">M</button>
-                            <button className="size">L</button>
-                            <button className="size">XL</button>
-                            <button className="size">XXL</button>
+                            <button onClick={this.setS} className="size">
+                              S
+                            </button>
+                            <button onClick={this.setM} className="size">
+                              M
+                            </button>
+                            <button onClick={this.setL} className="size">
+                              L
+                            </button>
+                            <button onClick={this.setXL} className="size">
+                              XL
+                            </button>
+                            <button onClick={this.setXXL} className="size">
+                              XXL
+                            </button>
                         </div>
-                        <button className="addBtn">ADD</button>
+                        <button onClick={this.setValues} className="addBtn">
+                          ADD
+                        </button>
                     </div>
                 </div>
             </div>
@@ -82,4 +135,6 @@ class Product extends React.Component{
     }
 }
 
-export default Product;
+const mapPropsToState = (reduxState) => reduxState;
+
+export default connect(mapPropsToState, { addToCart },)(Product);

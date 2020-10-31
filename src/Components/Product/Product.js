@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import "./Product.scss";
 import { Link } from "react-router-dom";
-import { addToCart, decreaseQuantity } from "../../redux/reducer";
+import { addToCart } from "../../redux/reducer";
 import { connect } from "react-redux";
 
 class Product extends React.Component {

@@ -1,3 +1,30 @@
+.alternateView{
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    align-items: center;
+    h1{
+        text-align: center;
+        margin-top: 120px;
+        font-size: 2.6rem;
+        letter-spacing: 2px;
+    }
+    p{
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+        margin-bottom: 2.5rem;
+    }
+    .links{
+        color: #6e6e6e;
+    }
+    .links:hover{
+        color: black;
+        text-decoration: none;
+        transition: 0.2s;
+    }
+}
+
 .Cart{
     display: flex;
     flex-direction: column;
