@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const express = require('express'),
+      path = require('path'),
       massive = require('massive'),
       session = require('express-session'),
       {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env,
@@ -16,7 +17,7 @@ app.use(session({
     secret: SESSION_SECRET,
     cookie: {maxAge: 1000 * 60 * 60 * 24}
 }));
-
+ 
 massive({
     connectionString: CONNECTION_STRING,
     ssl: {rejectUnauthorized: false}
@@ -25,6 +26,12 @@ massive({
     console.log('You are connected to a db');
     app.listen(SERVER_PORT, () => console.log(`Server is on ${SERVER_PORT}`))
 });
+
+app.use(express.static(__dirname + '/../build'));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build/index.html'))
+})
 
 //auth endpoints
 app.post('/api/login', authCtrl.login);
