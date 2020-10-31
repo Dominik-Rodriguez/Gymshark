@@ -29,9 +29,10 @@ massive({
 
 app.use(express.static(__dirname + '/../build'));
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../build/index.html'))
-})
+//THIS IS WHAT CAUSES ISSUES IN TERMS OF HOSTING.
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../build/index.html'))
+// })
 
 //auth endpoints
 app.post('/api/login', authCtrl.login);
