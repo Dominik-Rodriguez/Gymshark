@@ -71,7 +71,9 @@ class HomePage extends React.Component{
                             <button className="shop">SHOP</button>
                         </Link>
                     </div>
-                <img src='https://gymsharkrepl.s3-us-west-1.amazonaws.com/bannerphotos/homePageBanner1.jpg' alt="womens banner home page" className="WomensHomePage" />
+                <div className="WomensHomePageContainer">
+                    <img src='https://gymsharkrepl.s3-us-west-1.amazonaws.com/bannerphotos/homePageBanner1.jpg' alt="womens banner home page" className="WomensHomePage" />
+                </div>
                 <div className="womansbanner">
                     <div className="bannertxt">
                         <h5>WOMENS</h5>
@@ -90,8 +92,10 @@ class HomePage extends React.Component{
                         <Link to='/mensproducts '>
                             <button className="shop">SHOP</button>
                         </Link>
-                    </div>
+                </div>
+                <div className="MensHomePageContainer">
                     <img src='https://gymsharkrepl.s3-us-west-1.amazonaws.com/bannerphotos/MaleBannerPhoto1.jpg' alt="mens banner home page" className="MensHomePage" /> 
+                </div>
                 <div className="womansbanner">
                     <div className="bannertxt">
                         <h5>MENS</h5>
@@ -121,7 +125,7 @@ class HomePage extends React.Component{
                         <div>
                             <h2>SHOP</h2>
                             <h2>WOMENS</h2>
-                            <Link to='/mensproducts'>
+                            <Link to='/womensproducts'>
                                 <button>SHOP</button>
                             </Link>
                         </div>

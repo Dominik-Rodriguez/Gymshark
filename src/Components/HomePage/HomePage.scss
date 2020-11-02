@@ -1,9 +1,8 @@
 .HomePage{
-    // text-decoration: none!important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     .WomensHomePage{
         width: 100%;
         margin-top: 60px;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
     .links{
@@ -19,29 +18,23 @@
         h2{
             font-size: 2.3vw;
             color: white;
-            // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            width: 50vw;
         }
 
         p{
-            // margin-top: -20px;
             margin-top: -1.5vw;
-            // font-size: 16px;
             font-size: 0.95vw;
             color: white;
-            // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
         button{
             border: none;
             background-color: white;
-            // padding: 12px 24px;
             padding: 0.85vw 1.4vw;
             border-radius: 5rem;
             cursor: pointer;
-            // font-size: 14px;
             font-size: 0.9vw;
             font-weight: 700;
-            // font-family: Arial, Helvetica, sans-serif;
             text-align: center;
         }
     }
@@ -80,32 +73,26 @@
         color: white;
         text-align: left;
         margin-left: 60px;
+        // width: 200vw;
 
         h2{
-            // position: relative;
-            // font-size: 38px;
             font-size: 2.3vw;
             color: white;
-            // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            width: 50vw;
         }
 
         p{
-            // margin-top: -20px;
             margin-top: -1.5vw;
-            // font-size: 16px;
             font-size: 0.95vw;
             color: white;
-            // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
         button{
             border: none;
             background-color: white;
-            // padding: 12px 24px;
             padding: 0.85vw 1.4vw;
             border-radius: 5rem;
             cursor: pointer;
-            // font-size: 14px;
             font-size: 0.9vw;
             font-weight: 700;
             font-family: Arial, Helvetica, sans-serif;
@@ -116,7 +103,6 @@
     .grid{
         display: flex;
         flex-direction: row;
-        // justify-content: space-around;
         justify-content: center;
 
         .productBox{
@@ -134,20 +120,19 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                // width: 21.89vw;
                 width: 100%;
-                margin-top: -1vw;
+                margin-top: -0.5vw;
 
                 .topProduct{
                     display: flex;
                     align-items: center;
                     .bar{
-                        font-size: 14px;
+                        font-size: 1.2rem;
                         margin-right: 3px;
                     }
     
                     .new{
-                        font-size: 11px;
+                        font-size: 1.0rem;
                         font-weight: 700;
                     }
                 }
@@ -159,15 +144,15 @@
             }
 
             .description{
-                font-size: 16px;
+                font-size: 1.2rem;
                 width: 15.89vw;
                 color: #444444;
                 margin-right: 4.11vw;
-                margin-top: -1vw;
+                margin-top: -0.5vw;
             }
 
             .color{
-                font-size: 14px;
+                font-size: 1.0rem;
                 width:15.89vw;
                 color: #6e6e6e;
                 margin-top: -0.7vw;
@@ -201,7 +186,7 @@
             text-align: left;
 
             h2{
-                font-size: 34px;
+                font-size: 3.0rem;
                 letter-spacing: 0.05rem;
                 line-height: 10px;
                 font-weight: 650;
@@ -215,7 +200,7 @@
                 padding: 0.85vw 1.4vw;
                 border-radius: 5rem;
                 cursor: pointer;
-                font-size: 0.9vw;
+                font-size: 1.3rem;
                 font-weight: 700;
                 text-align: center;
             }
@@ -223,13 +208,13 @@
 
         .WomensBottomBannertxt{
             position: absolute;
-            margin-left: 16vw;
+            margin-left: 19vw;
             font-family: Arial, Helvetica, sans-serif;
             margin-top: 7vw;
             text-align: left;
 
             h2{
-                font-size: 34px;
+                font-size: 3.0rem;
                 letter-spacing: 0.05rem;
                 line-height: 10px;
                 font-weight: 650;
@@ -243,7 +228,7 @@
                 padding: 0.85vw 1.4vw;
                 border-radius: 5rem;
                 cursor: pointer;
-                font-size: 0.9vw;
+                font-size: 1.3rem;
                 font-weight: 700;
                 text-align: center;
             }
@@ -252,8 +237,6 @@
 
     .bottomtxt{
         margin: 2vw 4.5vw;
-        // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
         .Btxt{
             border: 0.5px solid #bbbcbc;
             text-align: left;
@@ -261,14 +244,260 @@
         }
 
         h5{
-            font-size: 14px;
+            font-size: 1.4rem;
             font-weight: 700;
             letter-spacing: 1px;
         }
 
         p{
-            font-size: 14px;
+            font-size: 1.2rem;
             color: #6e6e6e;
+        }
+    }
+}
+
+@media(max-width: 1234px){
+    .HomePage{
+
+
+        .WomensHomePageContainer{
+            width: 200vw;
+            overflow: hidden;
+            .WomensHomePage{
+                width: 300vw;
+            }
+        }
+
+        .textbox{
+            margin-top: 50vw;
+            h2{
+                font-size: 8vw;
+                width: 80vw;
+            }
+            p{
+                font-size: 4vw;
+            }
+            button{
+                font-size: 3vw;
+                padding: 3vw 4vw;
+            }
+        }
+
+        .MensHomePageContainer{
+            width: 200vw;
+            overflow: hidden;
+            .MensHomePage{
+                width: 400vw;
+            }
+        }
+
+        .mentextbox{
+            margin-top: 65.5vw;
+            h2{
+                font-size: 8vw;
+            }
+            p{
+                font-size: 4vw;
+            }
+            button{
+                font-size: 3vw;
+                padding: 3vw 4vw;
+            }
+        }
+
+        .womansbanner{
+            width: 200vw;
+        }
+
+        .grid{
+            width: 200vw;
+            .productBox{
+                .newItem{
+                    .topProduct{
+                        .bar{
+                            font-size: 1.8rem;
+                        }
+                        .new{
+                            margin-top: 32px;
+                            font-size: 1.6rem;
+                        }
+                    }
+                    .price{
+                        margin-top: 32px;
+                        font-size: 1.6rem;
+                    }
+                }
+
+                .productImg{
+                    height: 55vw;
+                    width: 47vw;
+                }
+
+                .description{
+                    width: 30vw;
+                    font-size: 1.8rem;
+                }
+
+                .color{
+                    font-size: 1.6rem;
+                }
+            }
+        }
+
+        .bottomBanners{
+            width: 200vw;
+            overflow: hidden;
+            .MensBottomBannertxt{
+                margin-top: 20vw;
+                margin-right: 30vw;
+                h2{
+                }
+
+                button{
+                    margin-top: -1.5vw;
+                    padding: 2vw 3.5vw;
+                }
+            }
+            .mensBottomBanner{
+                width:95vw;
+                height: 70vw;
+            }
+
+            .WomensBottomBannertxt{
+                margin-left: 35vw;
+                margin-top: 20vw;
+                button{
+                    margin-top: -1.5vw;
+                    padding: 2vw 3.5vw;
+                }
+            }
+
+            .BottomBanner{
+                width:95vw;
+                height: 70vw;
+            }
+        }
+
+        .bottomtxt{
+            width: 192vw;
+        }
+
+    }
+}
+
+@media(max-width: 774px){
+    .HomePage{
+
+        .WomensHomePageContainer{
+            width: 200vw;
+            overflow: hidden;
+            .WomensHomePage{
+                width: 435vw;
+            }
+        }
+        .textbox{
+            width: 150vw;
+            margin-top: 70vw;
+            h2{
+                width: 150vw;
+                font-size: 11vw;
+            }
+            p{
+                margin-top: -5vw;
+                font-size: 7vw;
+            }
+            button{
+                font-size: 6vw;
+                padding: 4vw 5vw;
+            }
+        }
+
+        .MensHomePageContainer{
+            width: 200vw;
+            overflow: hidden;
+            .MensHomePage{
+                width: 435vw;
+            }
+        }
+
+        .mentextbox{
+            width: 150vw;
+            margin-top: 70vw;
+            h2{
+                width: 150vw;
+                font-size: 11vw;
+            }
+            p{
+                margin-top: -5vw;
+                font-size: 7vw;
+            }
+            button{
+                font-size: 6vw;
+                padding: 4vw 5vw;
+            }
+        }
+
+        // .womansbanner{
+        //     width: 200vw;
+        // }
+
+        .grid{
+            flex-wrap: wrap;
+            .productBox{
+                .newItem{
+                    .topProduct{
+                        .bar{
+                            font-size: 1.6rem;
+                        }
+                        .new{
+                            margin-top: 28px;
+                            font-size: 1.4rem;
+                        }
+                    }
+                    .price{
+                        font-size: 1.4rem;
+                    }
+                }
+                .productImg{
+                    height: 100vw;
+                    width: 90vw;
+                }
+                .description{
+                    width: 90vw;
+                }
+                .color{
+                    width: 90vw;
+                }
+            }
+        }
+
+        .bottomBanners{
+            display: flex;
+            flex-direction: column;
+            .MensBottomBannertxt{
+                margin-bottom: 150vw;
+                margin-left: 150vw;
+                button{
+
+                }
+            }
+            .mensBottomBanner{
+                width: 192vw;
+                height: 110vw;
+            }
+
+            .WomensBottomBannertxt{
+                margin-top: 105vw;
+                margin-left: 10vw;
+                button{
+
+                }
+            }
+
+            .BottomBanner{
+                width: 192vw;
+                height: 110vw;
+            }
         }
     }
 }
