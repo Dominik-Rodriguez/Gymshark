@@ -25,7 +25,6 @@ export function increaseQuantity(item_id){
 }
 
 export function decreaseQuantity(item_id){
-
     return{
         type: DECREASE_QUANTITY,
         payload: item_id

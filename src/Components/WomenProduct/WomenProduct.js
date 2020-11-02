@@ -84,8 +84,8 @@ class Product extends React.Component{
         const {color, description, img, item_id, name, price} = this.state.product;
 
         const mappedLikeProducts = this.state.likeProducts.map((product, i) => (
-                <div className="likeProductPhotos">
-                    <a><img src={product.img} alt="item like image" className="likeProductImage" onClick={()=>{this.getDifferentProduct(i)}} /> </a>
+                <div className="WPlikeProductPhotos">
+                    <a><img src={product.img} alt="item like image" className="WPlikeProductImage" onClick={()=>{this.getDifferentProduct(i)}} /> </a>
                 </div>
         ))
         
@@ -96,7 +96,7 @@ class Product extends React.Component{
                         <p className="hometxt"><Link to="/" className="links">HOME</Link> - {description} - {color}</p>
                         <img src={img} alt="product image" className="productImage" />
                     </div> 
-                    <div className="productInfo">
+                    <div className="WPproductInfo">
                         <p className="productName">{name}</p>
                         <h2 className="productDescription">{description}</h2>
                         <p className="productPrice">${price}.00 USD</p>
@@ -108,7 +108,7 @@ class Product extends React.Component{
                             <p className="select">SELECT SIZE</p>
                             <p className="sizeguide">Size Guide</p>
                         </div>
-                        <div className="sizes">
+                        <div className="WPsizes">
                             <button onClick={this.setS} className="size">
                               S
                             </button>
@@ -125,7 +125,7 @@ class Product extends React.Component{
                               XXL
                             </button>
                         </div>
-                        <button onClick={this.setValues} className="addBtn">
+                        <button onClick={this.setValues} className="WPaddBtn">
                           ADD
                         </button>
                     </div>

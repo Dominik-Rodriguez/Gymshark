@@ -69,7 +69,6 @@ class Cart extends React.Component{
                     <h1>SHOPPING CART</h1>
                     <p>Your cart is currently empty. <br></br>
                     Continue browsing <Link to="/" className="links">here.</Link></p>
-                    
                 </div>
             )
         }
