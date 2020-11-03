@@ -390,50 +390,70 @@
 
         .WomensHomePageContainer{
             width: 200vw;
+            // width: 100%;
             overflow: hidden;
             .WomensHomePage{
+                // width: 235vw;
                 width: 435vw;
             }
         }
         .textbox{
             width: 150vw;
+            // width: 75vw;
             margin-top: 70vw;
+            // margin-top: 35vw;
             h2{
                 width: 150vw;
+                // width: 150vw;
                 font-size: 11vw;
+                // font-size: 5.5vw;
             }
             p{
                 margin-top: -5vw;
+                // margin-top: -2.5vw;
+                // font-size: 3.5vw;
                 font-size: 7vw;
             }
             button{
                 font-size: 6vw;
+                // font-size: 3vw;
                 padding: 4vw 5vw;
+                // padding: 2vw 2.5vw;
             }
         }
 
         .MensHomePageContainer{
             width: 200vw;
+            // width: 100%;
             overflow: hidden;
             .MensHomePage{
                 width: 435vw;
+                // width: 235vw;
             }
         }
 
         .mentextbox{
             width: 150vw;
+            // width: 75vw;
             margin-top: 70vw;
+            // margin-top: 35vw;
             h2{
                 width: 150vw;
+                // width: 75vw;
                 font-size: 11vw;
+                // font-size: 5.5vw;
             }
             p{
                 margin-top: -5vw;
+                // margin-top: -2.5vw;
                 font-size: 7vw;
+                // font-size: 3.5;
             }
             button{
                 font-size: 6vw;
+                // font-size: 3vw;
                 padding: 4vw 5vw;
+                // font-size: 2vw 2.5vw;
             }
         }
 
@@ -442,28 +462,37 @@
             .productBox{
                 .newItem{
                     width: 90vw;
+                    // width: 45vw;
                     .topProduct{
                         .bar{
                             font-size: 1.6rem;
+                            // font-size: 0.8rem;
                         }
                         .new{
                             margin-top: 28px;
+                            // margin-top: 14px;
                             font-size: 1.4rem;
+                            // font-size: 0.7rem;
                         }
                     }
                     .price{
                         font-size: 1.4rem;
+                        // font-size: 0.7rem;
                     }
                 }
                 .productImg{
                     height: 100vw;
+                    // height: 50vw;
                     width: 90vw;
+                    // width: 45vw;
                 }
                 .description{
                     width: 90vw;
+                    // width: 45vw;
                 }
                 .color{
                     width: 90vw;
+                    // width: 45vw;
                 }
             }
         }
@@ -473,19 +502,25 @@
             flex-direction: column;
             .MensBottomBannertxt{
                 margin-bottom: 150vw!important;
+                // margin-bottom: 75vw!important;
                 margin-left: 150vw!important;
+                // margin-left: 75vw!important;
                 button{
 
                 }
             }
             .mensBottomBanner{
                 width: 192vw;
+                // width: 96vw;
                 height: 110vw;
+                // height: 55vw;
             }
 
             .WomensBottomBannertxt{
                 margin-top: 105vw!important;
+                // margin-top: 52.5vw!important;
                 margin-left: 10vw!important;
+                // margin-left: 5vw!important;
                 button{
 
                 }
@@ -493,7 +528,9 @@
 
             .BottomBanner{
                 width: 192vw;
+                // width: 96vw;
                 height: 110vw;
+                // height: 55vw;
             }
         }
     }
