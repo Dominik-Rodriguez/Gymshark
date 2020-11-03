@@ -97,13 +97,10 @@ const reducer = (state = initialState, action) => {
             }
 
         case ADD_TO_CART:
-            //setting a temp cart
             updatedCart = {...state.cart};
-            //finding the correct index to operate in
             updatedItemIndex = state.cart.items.findIndex((item) => {
                 return payload.item_id === item.item_id;
             })
-
             if(updatedItemIndex < 0){
                 return {
                     ...state, cart: {
@@ -135,9 +132,7 @@ const reducer = (state = initialState, action) => {
 
             return{
                 ...state, cart:{
-                    items: [
-                        ...state.cart.items
-                    ],
+                    items: [...state.cart.items],
                     totalPrice: state.cart.totalPrice - removeItem.price,
                     totalNumItems: state.cart.totalNumItems - 1
                 }

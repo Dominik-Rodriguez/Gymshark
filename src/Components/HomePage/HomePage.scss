@@ -437,14 +437,11 @@
             }
         }
 
-        // .womansbanner{
-        //     width: 200vw;
-        // }
-
         .grid{
             flex-wrap: wrap;
             .productBox{
                 .newItem{
+                    width: 90vw;
                     .topProduct{
                         .bar{
                             font-size: 1.6rem;

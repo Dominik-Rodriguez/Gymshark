@@ -52,7 +52,7 @@ class Cart extends React.Component{
                                 <div className="quantityNum">{product.quantity}</div>
                                 <button onClick={() => this.increase(product.item_id)}>+</button>
                             </div>
-                            <a className="removeLink" onClick={() => this.remove(product.item_id)}><div className="remove">Remove</div></a>
+                            <a className="removeLink" onClick={() => this.remove(product)}><div className="remove">Remove</div></a>
                         </div>
                     </td>
                     <td className="PriceColumn">
