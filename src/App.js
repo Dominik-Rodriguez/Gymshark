@@ -9,12 +9,6 @@ class App extends React.Component{
     return (
       <div className="App">
         <Header />
-        {/* <div className="menu">
-                    <a href="" className="MensSide">MENS</a>
-                    <a href="" className="WomensSide">WOMENS</a>
-                    <a href="" className="AboutUs">ABOUT US</a>
-                    {/* <a>ACCESSORIES</a> */}
-                {/* </div> */}
           {routes}
         <Footer />
       </div>

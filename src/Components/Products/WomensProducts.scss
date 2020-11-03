@@ -8,7 +8,7 @@
         width: 100%;
     }
 
-    .bannertxt{
+    .Womensbannertxt{
         position: absolute;
         color:white;
         margin-top: 21vw;
@@ -17,7 +17,7 @@
         margin-right: 80vw;
         text-align: left;
         letter-spacing: 2px;
-        .bannertxt2{
+        .Womensbannertxt2{
             font-size: 35px;
         }
     }
@@ -30,7 +30,7 @@
         text-decoration: none;
     }
 
-    .productBox{
+    .WomensproductBox{
         margin-top: 30px;
         margin-left: 4px;
         margin-right: 4px;
@@ -89,6 +89,88 @@
         p{
             font-size: 14px;
             color: #6e6e6e;
+        }
+    }
+}
+
+@media(max-width: 1234px){
+    .Products{
+        .WomensMainBannerContainer{
+            // margin-top: 60px;
+            width: 200vw;
+            overflow: hidden;
+            // height: auto;
+            .WomensMainBanner{
+                width:180vw;
+            }
+        }
+        .Womensbannertxt{
+            margin-top: 40vw;
+            font-size: 1.2rem;
+            margin-left: 120px;
+            .Womensbannertxt2{
+                font-size: 3rem;
+            }
+        }
+
+        .WomensproductBox{
+            .productImg{
+                width: 22vw;
+                height: 26vw;
+            }
+            .toptxt{
+                .description{
+                    // width: 16vw;
+                }
+                h4{
+
+                }
+            }
+
+            .color{
+
+            }
+        }
+    }
+}
+
+@media(max-width: 774px){
+    .Products{
+        .WomensMainBannerContainer{
+            margin-top: 60px;
+            width: 100%;
+            overflow: hidden;
+            height: auto;
+            .WomensMainBanner{
+
+            }
+        }
+        .Womensbannertxt{
+            margin-top: 40vw;
+            font-size: 1.2rem;
+            margin-left: 180px;
+            .Womensbannertxt2{
+                font-size: 3rem;
+            }
+        }
+
+        .WomensproductBox{
+            .productImg{
+                width: 46vw;
+                height: 50vw;
+            }
+            .toptxt{
+                .description{
+                    width: 16vw;
+                }
+                h4{
+
+                }
+            }
+
+            .color{
+
+            }
         }
     }
 }

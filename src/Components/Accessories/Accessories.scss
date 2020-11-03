@@ -4,7 +4,7 @@
     justify-content: center;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-    .WomensMainBanner{
+    .AccessoriesMainBanner{
         width: 100%;
     }
 
@@ -84,6 +84,91 @@
         p{
             font-size: 14px;
             color: #6e6e6e;
+        }
+    }
+}
+
+@media(max-width: 1234px){
+    .Products{
+        .AccessoryMainBannerContainer{
+            width: 200vw;
+            overflow: hidden;
+            .AccessoriesMainBanner{
+                width: 180vw;
+                // height: 80vw;
+            }
+        }
+
+        .bannertxt4{
+            margin-top: 22vw;
+            font-size: 1.0rem;
+            margin-left: 120px;
+            .bannertxt2{
+                font-size: 2rem;
+            }
+        }
+
+        .productBox{
+            .productImg{
+                width: 22vw;
+                height: 26vw;
+            }
+            .toptxt{
+                .description{
+
+                }
+                h4{
+
+                }
+            }
+
+            .color{
+
+            }
+        }
+    }
+}
+
+@media(max-width: 774px){
+    .Products{
+        .AccessoryMainBannerContainer{
+            margin-top: 60px;
+            width: 100%;
+            overflow: hidden;
+            height: auto;
+            .AccessoriesMainBanner{
+                // object-fit: cover;
+                // width: 350vw;
+            }
+        }
+
+        .bannertxt4{
+            margin-top: 27vw;
+            font-size: 1.0rem;
+            margin-left: 190px;
+            .bannertxt2{
+                font-size: 2rem;
+            }
+        }
+
+        .productBox{
+            // width: vw;
+            .productImg{
+                width: 46vw;
+                height: 50vw;
+            }
+            .toptxt{
+                .description{
+                    width: 16vw;
+                }
+                h4{
+
+                }
+            }
+
+            .color{
+
+            }
         }
     }
 }

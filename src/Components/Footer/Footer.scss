@@ -9,8 +9,8 @@ footer{
 
 
     .left-container{
-        // width: 50%;
-        padding: 0 30px;
+        width: 50%;
+        padding: 0 0px;
         font-size: 1.2rem;
         .homebtn{
             height: 20px;
@@ -72,7 +72,9 @@ footer{
         height: 200px;
         width: 50%;
         text-align: right;
-        padding: 0px 30px;
+        padding: 0px 0px;
+        margin-right: 10px
+        ;
         .gymsharkBlog{
             height: 20px;
             width: 100px;
@@ -80,7 +82,8 @@ footer{
         .emailInput{
             line-height: 3.5rem;
             width: 19vw;
-            font-size: 1.2rem;            color: #6e6e6e;
+            font-size: 1.2rem;            
+            color: #6e6e6e;
             border: 1px solid #eee;
         }
         h5{
@@ -97,6 +100,62 @@ footer{
 
         a{
             color: #6e6e6e;
+        }
+    }
+}
+
+@media(max-width: 1234px){
+    footer{
+        // width: 150vw;
+    }
+}
+
+@media(max-width: 773px){
+    footer{
+        // justify-content: center;
+        align-items: center;
+        .homebtn{
+            // align-items: left;
+            // margin-right: 100vw;
+            width: 20vw;
+            // margin-right: 0px;
+            align-items: left;
+        }
+        display: flex;
+        flex-direction: column;
+        .left-container{
+            display: flex;
+            flex-direction: column;
+            font-size: 0.8rem;
+            width: 100%;
+
+            .lists{
+                justify-content: center;
+                ul{
+                    width: 20vw;
+                }
+            }
+        }
+
+        .right-container{
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 20px;
+            .gymsharkBlog{
+                // margin-left: 20px;
+                // padding-left: 30vw;
+            }
+            .emailStuff{
+                display: flex;
+                .emailInput{
+                    width: 60vw;
+                }
+            }
         }
     }
 }

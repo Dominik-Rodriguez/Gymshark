@@ -43,7 +43,9 @@ class Accessories extends React.Component{
                         ACCESSORIES
                     </div>
                 </div>
-                <img src="https://gymsharkrepl.s3-us-west-1.amazonaws.com/bannerphotos/AccessoriesBanner1.jpg" alt="womens main banner" className="WomensMainBanner" />
+                <div className="AccessoryMainBannerContainer">
+                    <img src="https://gymsharkrepl.s3-us-west-1.amazonaws.com/bannerphotos/AccessoriesBanner1.jpg" alt="womens main banner" className="AccessoriesMainBanner" />
+                </div>
                 {mappedProducts}
                 <div className="bottomtxt">
                     <div className="Btxt">

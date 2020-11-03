@@ -64,7 +64,9 @@ class Footer extends React.Component{
                     <img src={gymsharkBlog} className="gymsharkBlog" alt='gymshark blog' />
                     <p>Visit the <a href="https://www.gymshark.com/blogs/news">Gymshark Blog</a></p>
                     <h5>SIGN UP FOR OUR NEWSLETTER</h5>
-                    <input type="text" placeholder="Your Email Address" className="emailInput"/><button className="blogBtn">></button>
+                    <div className="emailStuff">
+                        <input type="text" placeholder="Your Email Address" className="emailInput"/><button className="blogBtn">></button>
+                    </div>
                 </div>
             </footer>
         )

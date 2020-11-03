@@ -249,3 +249,15 @@
     }
 
 }
+
+@media(max-width: 774px){
+    .Cart{
+        .itemsTable{
+            .tableHeaderItems{
+                th{
+                    // display: ;
+                }
+            }
+        }
+    }
+}

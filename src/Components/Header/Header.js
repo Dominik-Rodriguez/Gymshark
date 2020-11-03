@@ -31,7 +31,6 @@ class Header extends React.Component{
                 <Link to='/'>
                     <img src={gymsharkIcon} alt="home" className="homeBtn" />
                 </Link>
-                {/* desktop view */}
                 <nav className="tablet-header">
                     <div className="navbar-menu">
                         <Link to="/mensproducts">
@@ -46,7 +45,7 @@ class Header extends React.Component{
                     </div>
                 </nav>
 
-                <div>
+                <div className="logincart">
                     <Link to='/login'>
                         <img src={loginIcon} alt="login" className="loginIcon" /> 
                     </Link>
@@ -55,14 +54,6 @@ class Header extends React.Component{
                         <img src={cartIconWider} alt='cart' className='cartIcon' />
                     </Link>
                 </div>
-
-                {/* slide out menu */}
-                {/* <div className="menu">
-                    <a href="" className="MensSide">MENS</a>
-                    <a href="" className="WomensSide">WOMENS</a>
-                    <a href="" className="AboutUs">ABOUT US</a>
-                    {/* <a>ACCESSORIES</a> */}
-                {/* </div> */}
             </header>
         )
     }

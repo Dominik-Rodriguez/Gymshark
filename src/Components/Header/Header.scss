@@ -108,3 +108,34 @@ header{
         margin-right: 20px;
     }
 }
+
+@media(max-width: 773px){
+    header{
+        .homeBtn{
+            margin-left: 10px;
+        }
+
+        .Mens{
+            margin-right: 8px;
+        }
+
+        .Womens{
+            margin-right: 8px;
+        }
+
+        .logincart{
+            .loginIcon{
+                margin-left: 0px;
+            }
+            .cartIcon{
+                margin-right: 0px;
+                margin-left: 8px;
+                // color:red;
+            }
+            .CartCount{
+                margin-left: 48.5px;
+                // color: red;
+            }
+        }
+    }
+}

@@ -8,7 +8,7 @@
         width: 100%;
     }
 
-    .bannertxt{
+    .Mensbannertxt{
         position: absolute;
         color:white;
         margin-top: 21vw;
@@ -17,7 +17,7 @@
         margin-right: 80vw;
         text-align: left;
         letter-spacing: 2px;
-        .bannertxt2{
+        .Mensbannertxt2{
             font-size: 35px;
         }
     }
@@ -30,7 +30,7 @@
         text-decoration: none;
     }
 
-    .productBox{
+    .MensproductBox{
         margin-top: 30px;
         margin-left: 4px;
         margin-right: 4px;
@@ -88,6 +88,90 @@
         p{
             font-size: 14px;
             color: #6e6e6e;
+        }
+    }
+}
+
+@media(max-width: 1234px){
+    .Products{
+        .MensMainBannerContainer{
+            width: 200vw;
+            overflow: hidden;
+            .MensMainBanner{
+                width: 180vw;
+                // height: 80vw;
+            }
+        }
+
+        .Mensbannertxt{
+            margin-top: 40vw;
+            font-size: 1.2rem;
+            margin-left: 90px;
+            .Mensbannertxt2{
+                font-size: 3rem;
+            }
+        }
+
+        .MensproductBox{
+            .productImg{
+                width: 22vw;
+                height: 26vw;
+            }
+            .toptxt{
+                .description{
+
+                }
+                h4{
+
+                }
+            }
+
+            .color{
+
+            }
+        }
+    }
+}
+
+@media(max-width: 774px){
+    .Products{
+        .MensMainBannerContainer{
+            margin-top: 60px;
+            width: 100%;
+            overflow: hidden;
+            height: auto;
+            .MensMainBanner{
+                // object-fit: cover;
+                // width: 350vw;
+            }
+        }
+
+        .Mensbannertxt{
+            margin-top: 40vw;
+            font-size: 1.2rem;
+            .Mensbannertxt2{
+                font-size: 3rem;
+            }
+        }
+
+        .MensproductBox{
+            // width: vw;
+            .productImg{
+                width: 46vw;
+                height: 50vw;
+            }
+            .toptxt{
+                .description{
+                    width: 16vw;
+                }
+                h4{
+
+                }
+            }
+
+            .color{
+
+            }
         }
     }
 }

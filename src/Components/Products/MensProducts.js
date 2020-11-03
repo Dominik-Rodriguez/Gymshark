@@ -25,7 +25,7 @@ class MensProducts extends React.Component{
     render(){
         const mappedProducts = this.state.products.map((product, i) => (
             <Link to={`/menproduct/${product.item_id}`} className="links">
-                <div className="productBox">
+                <div className="MensproductBox">
                     <img src={product.img} alt="item image" className="productImg" />
                     <div className="toptxt">
                         <p className="description">{product.description}</p>
@@ -37,13 +37,15 @@ class MensProducts extends React.Component{
         ))
         return(
             <div className="Products">
-                <div className="bannertxt">
+                <div className="Mensbannertxt">
                     GYMSHARK
-                    <div className="bannertxt2">
+                    <div className="Mensbannertxt2">
                         MENS
                     </div>
                 </div>
-                <img src="https://gymsharkrepl.s3-us-west-1.amazonaws.com/bannerphotos/MensMainBanner1.jpg" alt="Mens product banner" className="MensMainBanner" />
+                <div className="MensMainBannerContainer">
+                    <img src="https://gymsharkrepl.s3-us-west-1.amazonaws.com/bannerphotos/MensMainBanner1.jpg" alt="Mens product banner" className="MensMainBanner" />
+                </div>
                 {mappedProducts}
                 <div className="bottomtxt">
                     <div className="Btxt">

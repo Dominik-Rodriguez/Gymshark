@@ -8,18 +8,19 @@
         display: flex;
         justify-content: center;
         text-align: left;
-
+        align-items: center;
+        align-content: center;
         h3{
             text-align: center;
             // letter-spacing: 1px;
-            font-size: 20px;
+            font-size: 1.1rem;
             font-weight: 600;
             letter-spacing: 0.025rem;
         }
 
         p{
             text-align: center;
-            font-size: 12px;
+            font-size: 0.7rem;
         }
 
         .loginbottomtxt{
@@ -37,7 +38,7 @@
             padding: 11px 24px;
             border-radius: 5rem;
             cursor: pointer;
-            font-size: 12px;
+            font-size: 1.2rem;
             font-weight: 700;
             text-align: center;
             width: 295px;
@@ -46,7 +47,7 @@
         h5{
             color: #6e6e6e;
             margin-bottom: 0.2vw;
-            font-size: 11px;
+            font-size: 1.1rem;
             padding: 0px 0px 5px
         }
 
@@ -60,10 +61,19 @@
             color: #007db5;
             font-weight: 700;
             text-decoration: underline;
+            font-weight: 1.2rem;
         }
 
         span:hover{
             cursor: pointer;
+        }
+    }
+}
+
+@media(max-width: 774px){
+    .loginPage{
+        .login{
+
         }
     }
 }
