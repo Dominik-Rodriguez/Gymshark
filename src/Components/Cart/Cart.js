@@ -26,9 +26,13 @@ class Cart extends React.Component{
         this.props.clearItem(id);
     }
 
+    checkOutAlert = () => {
+        alert("Thanks for shopping!")
+    }
+
     render(){
         const mappedItems = this.props.cart.items.map((product, i) => (
-                <tr>
+                <tr className="productInfoColumns">
                     <td className="totalColumn">
                         <div className="itemInfo">
                         <img src={product.img} alt="Cart image" className="CartImg" />
@@ -79,20 +83,20 @@ class Cart extends React.Component{
                     <table className="itemsTable">
                         <tr className="tableHeaders">
                             <th className="tableHeaderItems">ITEMS</th>
-                            <th>QUANTITY</th>
-                            <th>SUBTOTAL</th>
+                            <th className="tableHeadersToRid">QUANTITY</th>
+                            <th className="tableHeadersToRid">SUBTOTAL</th>
                         </tr>
                         {mappedItems}
                         <tr className="tableBottom">
-                            <td>
+                            <td className="continueShopping">
                                 <Link to='/' className="links">
                                     <p>Continue Shopping</p>
                                 </Link>
                             </td>
-                            <td>
+                            <td className="totalColumnName">
                                 <h3>TOTAL</h3>
                             </td>
-                            <td>
+                            <td className="tableBottomPriceContainer">
                                 <h3 className="tableBottomPrice">${this.props.cart.totalPrice}.00 USD</h3>
                             </td>
                         </tr>
@@ -105,7 +109,7 @@ class Cart extends React.Component{
                             <img src={paypal} className="paypal" alt='card' />
                             <img src={americanExpress} className="americanExpress" alt='card' />
                         </div>
-                        <button className="checkout">CHECK OUT</button>
+                        <button className="checkout" onClick={this.checkOutAlert}>CHECK OUT</button>
                     </div>
                 </div>
             )

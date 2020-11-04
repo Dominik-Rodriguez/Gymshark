@@ -16,6 +16,7 @@ const CLEAR_ITEM = 'CLEAR_ITEM',
       ADD_TO_CART = 'ADD_TO_CART',
       DECREASE_QUANTITY = 'REDUCE_QUANTITY',
       INCREASE_QUANTITY = 'INCREASE_QUANTITY';
+    //   CLEAR_CART = 'CLEAR_CART'
 
 export function increaseQuantity(item_id){
     return{
@@ -109,12 +110,20 @@ const reducer = (state = initialState, action) => {
                         totalNumItems: state.cart.totalNumItems + 1 
                     }
                 }
-            } else {
+            } else if(payload.size === state.cart.items[updatedItemIndex].size) {
                 let [updatedItem] = state.cart.items.splice(updatedItemIndex, 1);
                 updatedItem.quantity += 1;
                 return {
                     ...state, cart: {
                         items: [...state.cart.items, updatedItem],
+                        totalPrice: state.cart.totalPrice + payload.price,
+                        totalNumItems: state.cart.totalNumItems + 1 
+                    }
+                }
+            } else {
+                return {
+                    ...state, cart: {
+                        items: [...state.cart.items, payload],
                         totalPrice: state.cart.totalPrice + payload.price,
                         totalNumItems: state.cart.totalNumItems + 1 
                     }

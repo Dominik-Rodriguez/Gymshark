@@ -85,14 +85,7 @@ class Product extends React.Component {
   };
 
   render() {
-    const {
-      color,
-      description,
-      img,
-      item_id,
-      name,
-      price,
-    } = this.state.product;
+    const { color, description, img, item_id, name, price} = this.state.product;
 
     const mappedLikeProducts = this.state.likeProducts.map((product, i) => (
       <div className="MPlikeProductPhotos">

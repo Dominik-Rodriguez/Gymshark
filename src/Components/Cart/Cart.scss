@@ -252,11 +252,55 @@
 
 @media(max-width: 774px){
     .Cart{
+        margin-bottom: 110px;
         .itemsTable{
             .tableHeaderItems{
-                th{
-                    // display: ;
+                width: 100%;
+            }
+            .tableHeadersToRid{
+                // display: none;
+            }
+            .productInfoColumns{
+                .PriceColumn{
+                    // display: none;
                 }
+            }
+            .tdModify{
+                // display: none;
+                .quantityModify{
+                    // display: none;
+                    .btnsContainer{
+                        // display: none;
+                    }
+                }
+            }
+            .tableBottom{
+                .continueShopping{
+                    // display: none;
+                }
+                .totalColumnName{
+                    // width: 40vw;
+                    // column-span: 1;
+                    // display: inline-block;
+                    // width: 20px;
+                }
+                .tableBottomPriceContainer{
+                    // display: inline-block;
+                    // width: 40px;
+                    .tableBottomPrice{
+                        // display: none;
+                    }
+                }
+            }
+        }
+        .footer{
+            margin-top: -50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .checkout{
+                width: 100%;
+                // margin-bottom: 130px;
             }
         }
     }
