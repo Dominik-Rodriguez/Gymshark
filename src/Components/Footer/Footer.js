@@ -9,11 +9,26 @@ import visa from '../../icons/visa.png';
 import paypal from '../../icons/paypal.png';
 import americanExpress from '../../icons/americanexpress.png';
 import gymsharkBlog from '../../icons/GymsharkBlogLogo.svg';
+import axios from 'axios';
 
 class Footer extends React.Component{
-    // constructor(){
-    //     super();
-    // }
+    constructor(){
+        super();
+
+        this.state = {
+            email: ''
+        }
+    }
+
+    handleChange(e){
+        this.setState({email: e.target.value})
+    }
+
+    handleEmail = () => {
+        const {email} = this.state
+        axios.post('/api/email', {email})
+        .then((res)=> {}).catch((err) => console.log(err));
+    } 
 
     render(){
         return(
@@ -65,7 +80,8 @@ class Footer extends React.Component{
                     <p>Visit the <a href="https://www.gymshark.com/blogs/news">Gymshark Blog</a></p>
                     <h5>SIGN UP FOR OUR NEWSLETTER</h5>
                     <div className="emailStuff">
-                        <input type="text" placeholder="Your Email Address" className="emailInput"/><button className="blogBtn">></button>
+                        <input onChange={(e) => this.handleChange(e)} type="text" placeholder="Your Email Address" className="emailInput"/>
+                        <button onClick={this.handleEmail} className="blogBtn">></button>
                     </div>
                 </div>
             </footer>

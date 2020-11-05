@@ -1,3 +1,5 @@
+// const { email } = require('./emailController');
+
 require('dotenv').config();
 
 const express = require('express'),
@@ -8,6 +10,7 @@ const express = require('express'),
       prodCtrl = require('./productControllers'),
       authCtrl = require('./logincontroller'),
       homeCtrl = require('./homeController'),
+      emailCtrl = require('./emailController'),
       app = express();
 app.use(express.json());
 
@@ -63,3 +66,6 @@ app.get('/api/LikeAccessories/:description', prodCtrl.LikeAccessories);
 //home endpoints
 app.get('/api/getMensProducts', homeCtrl.maleHomePage);
 app.get('/api/getWomensProducts', homeCtrl.femaleHomePage);
+
+//email endpoints
+app.post('/api/email', emailCtrl.email);

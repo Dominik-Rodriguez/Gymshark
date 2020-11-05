@@ -12,9 +12,11 @@ footer{
         width: 50%;
         padding: 0 0px;
         font-size: 1.2rem;
+        text-align: left;
         .homebtn{
             height: 20px;
             width: 120px;
+            margin-left: 10px;
         }
         .paymentlogos{
             height: 20px;
@@ -128,7 +130,7 @@ footer{
             flex-direction: column;
             font-size: 0.8rem;
             width: 100%;
-
+            text-align: center;
             .lists{
                 justify-content: center;
                 ul{

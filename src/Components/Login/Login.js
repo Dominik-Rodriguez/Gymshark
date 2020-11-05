@@ -24,6 +24,12 @@ class Login extends React.Component{
         this.setState({registerView: !this.state.registerView});
     }
 
+    // sendEmail = () => {
+    //     const {email} = this.state
+    //     axios.post('/api/email', {email})
+    //     .then((res)=> {}).catch((err) => console.log(err));
+    // }
+
     handleRegister = () => {
         const {email, password, verPassword} = this.state;
         if(password && password === verPassword){
