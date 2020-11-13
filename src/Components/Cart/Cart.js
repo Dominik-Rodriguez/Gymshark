@@ -8,6 +8,11 @@ import visa from '../../icons/visa.png';
 import paypal from '../../icons/paypal.png';
 import americanExpress from '../../icons/americanexpress.png';
 import {decreaseQuantity, increaseQuantity, clearItem} from '../../redux/reducer';
+import {loadStripe} from '@stripe/stripe-js';
+import axios from 'axios';
+const stripePromise = loadStripe(
+    "pk_test_51HiC4WHbgMQS4ctVfDAs61r0WHq6drln0g9aNK5uuAV6smVAlpIIA9YQRr9FjTXhLmTzyr2FEcSk2kpTdVwHk7EL00MAE54pME"
+);
 
 class Cart extends React.Component{
     constructor(props){
@@ -26,8 +31,22 @@ class Cart extends React.Component{
         this.props.clearItem(id);
     }
 
-    checkOutAlert = () => {
-        alert("Thanks for shopping!")
+    checkOut = async (props) => {
+        const stripe = await stripePromise;
+        axios
+            .post("/api/payments", {price: this.props.cart.totalPrice})
+            .then((res) => {
+                const id = res.data.id;
+                return stripe.redirectToCheckout({ sessionId: id});
+            })
+            .then((res) => {
+                if(res.error) {
+                    alert(res.error.message);
+                }
+            })
+            .catch((err) => {
+                console.error('error', err);
+            })
     }
 
     render(){
@@ -109,7 +128,7 @@ class Cart extends React.Component{
                             <img src={paypal} className="paypal" alt='card' />
                             <img src={americanExpress} className="americanExpress" alt='card' />
                         </div>
-                        <button className="checkout" onClick={this.checkOutAlert}>CHECK OUT</button>
+                        <button className="checkout" onClick={this.checkOut}>CHECK OUT</button>
                     </div>
                 </div>
             )

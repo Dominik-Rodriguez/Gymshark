@@ -11,6 +11,7 @@ const express = require('express'),
       authCtrl = require('./logincontroller'),
       homeCtrl = require('./homeController'),
       emailCtrl = require('./emailController'),
+      stripe = require('stripe')(STRIPE_SECRET_KEY),
       app = express();
 app.use(express.json());
 
@@ -69,3 +70,35 @@ app.get('/api/getWomensProducts', homeCtrl.femaleHomePage);
 
 //email endpoints
 app.post('/api/email', emailCtrl.email);
+
+
+//stripe endpoint
+app.post('/api/payments', async(req,res) => {
+    //map over products from redux
+    const session = await stripe.checkout.sessions.create({
+        payment_method_types: ['card'],
+        line_items: [
+            {
+                price_data: {
+                    currency: 'usd',
+                    product_data: {
+                        name: 'Thanks for Shopping with Gymshark',
+                        images: [
+                            "https://pngimg.com/uploads/shopping_cart/shopping_cart_PNG37.png",
+                          ],
+                    },
+                    unit_amount: req.body.price * 100,
+                },
+                quantity: 1,
+            },
+        ],
+        mode: 'payment',
+        // success_url: `http://206.189.215.192:3001/sucess`,
+        success_url: `http://localhost:3000/#/success`,
+        cancel_url: `http://localhost:3000/#/failure`,
+        // cancel_url: `http://206.189.215.192:3001/failure`
+    });
+    res.json({ id: session.id });
+});
+
+// const mapStateToProps = (reduxState) => reduxState;
