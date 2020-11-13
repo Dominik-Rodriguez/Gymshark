@@ -23,7 +23,7 @@ export default(
         <Route path='/accessory/:id' component={Accessory} />
         <Route path='/cart' component={Cart} />
         <Route path="/Login" component={Login}/> 
-        <Route path="/success" component={Success} />
-        <Route path='/failure' component={Failure} />
+        <Route path="/Success" component={Success} />
+        <Route path='/Failure' component={Failure} />
     </Switch>
 )
