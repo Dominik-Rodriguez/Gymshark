@@ -93,7 +93,7 @@ app.post('/api/payments', async(req,res) => {
             },
         ],
         mode: 'payment',
-        success_url: `http://206.189.215.192:3001/sucess`,
+        success_url: `http://206.189.215.192:3001/success`,
         // success_url: `http://localhost:3000/#/success`,
         // cancel_url: `http://localhost:3000/#/failure`,
         cancel_url: `http://206.189.215.192:3001/failure`

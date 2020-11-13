@@ -80,7 +80,7 @@ class Footer extends React.Component{
                     <p>Visit the <a href="https://www.gymshark.com/blogs/news">Gymshark Blog</a></p>
                     <h5>SIGN UP FOR OUR NEWSLETTER</h5>
                     <div className="emailStuff">
-                        <input onChange={(e) => this.handleChange(e)} type="text" placeholder="Your Email Address" className="emailInput"/>
+                        <input onChange={(e) => this.handleChange(e)} type="email" name="email" placeholder="Your Email Address" className="emailInput"/>
                         <button onClick={this.handleEmail} className="blogBtn">></button>
                     </div>
                 </div>
