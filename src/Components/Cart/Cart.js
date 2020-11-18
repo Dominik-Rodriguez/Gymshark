@@ -128,7 +128,9 @@ class Cart extends React.Component{
                             <img src={paypal} className="paypal" alt='card' />
                             <img src={americanExpress} className="americanExpress" alt='card' />
                         </div>
-                        <button className="checkout" onClick={this.checkOut}>CHECK OUT</button>
+                        <button className="checkout" onClick={() => {
+                            this.props.history.push('/payment')
+                        }}>CHECK OUT</button>
                     </div>
                 </div>
             )

@@ -15,8 +15,16 @@ const initialState = {
 const CLEAR_ITEM = 'CLEAR_ITEM',
       ADD_TO_CART = 'ADD_TO_CART',
       DECREASE_QUANTITY = 'REDUCE_QUANTITY',
-      INCREASE_QUANTITY = 'INCREASE_QUANTITY';
+      INCREASE_QUANTITY = 'INCREASE_QUANTITY',
+      CLEAR_CART = 'CLEAR_CART';
     //   CLEAR_CART = 'CLEAR_CART'
+
+export function clearCart() {
+    return {
+      type: CLEAR_CART,
+      payload: [],
+    };
+}
 
 export function increaseQuantity(item_id){
     return{
@@ -146,6 +154,14 @@ const reducer = (state = initialState, action) => {
                     totalNumItems: state.cart.totalNumItems - 1
                 }
             }
+
+        case CLEAR_CART:
+            return {...state, cart: {
+                items: [],
+                totalPrice: 0,
+                totalNumItems: 0
+            }
+        }
         default: return state;
     }
 }

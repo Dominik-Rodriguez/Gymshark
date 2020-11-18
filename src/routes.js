@@ -11,6 +11,7 @@ import WomenProduct from './Components/WomenProduct/WomenProduct';
 import Accessory from './Components/Accessories/Accessory';
 import Success from './Components/StripeOutcomes/success';
 import Failure from './Components/StripeOutcomes/failure';
+import Payments from './Components/StripeElements/Payments';
 
 export default(
     <Switch>
@@ -25,5 +26,6 @@ export default(
         <Route path="/Login" component={Login}/> 
         <Route path="/Success" component={Success} />
         <Route path='/Failure' component={Failure} />
+        <Route path="/Payment" component={Payments} />
     </Switch>
 )

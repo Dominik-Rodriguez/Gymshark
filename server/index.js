@@ -12,6 +12,7 @@ const express = require('express'),
       homeCtrl = require('./homeController'),
       emailCtrl = require('./emailController'),
       stripe = require('stripe')(STRIPE_SECRET_KEY),
+      stripeCtrl = require('./stripeController');
       app = express();
 app.use(express.json());
 
@@ -71,8 +72,10 @@ app.get('/api/getWomensProducts', homeCtrl.femaleHomePage);
 //email endpoints
 app.post('/api/email', emailCtrl.email);
 
+//Stripe Element to handle payment in house
+app.post('/api/charge', stripeCtrl.charge);
 
-//stripe endpoint
+//stripe endpoint to take to stripe ui
 app.post('/api/payments', async(req,res) => {
     //map over products from redux
     const session = await stripe.checkout.sessions.create({
