@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import './HomePage.scss';
+import userEvent from '@testing-library/user-event';
 
 class HomePage extends React.Component{
     constructor(){
@@ -16,6 +17,8 @@ class HomePage extends React.Component{
     componentDidMount(){
         this.getMenProducts();
         this.getWomenProducts();
+        // if(console.log(this.session.user[0]))
+        // console.log(this.session.user)
     }
 
     getMenProducts = () => {

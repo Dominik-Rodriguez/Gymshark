@@ -32,18 +32,19 @@ create table Users(
     username varchar(20)
 )
 
-create table Orders(
-    order_id serial primary key, 
-    order_date date,
-    order_total int,
-    item_id int,
-    name varchar(255),
-    description varchar(255),
-    img text,
-    color varchar(50),
-    price int
-    user_id int,
+create table orders(
+    user_firstName varchar(50),
+    user_lastName varchar(50),
+    user_address varchar(100),
+    user_city varchar(100),
+    user_state varchar(100),
+    user_zip varchar(20),
+    user_email text,
+    order_id serial primary key,
+    order_total_number_items int,
+    order_total_price decimal,
+    order_date text,
     constraint fk_users
-        foreign key(user_id)
-            references Users(user_id)
-)
+        foreign key (order_id) 
+            references users(user_id)
+);

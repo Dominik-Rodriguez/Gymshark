@@ -4,6 +4,31 @@
     flex-direction: column;
     align-items: center;
 
+    .cart-Info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 545px;
+        .P-subtotal{
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .P-tax{
+            display: flex;
+            font-weight: bold;
+            font-size: 1.2rem;
+            justify-content: space-between;
+        }
+        .P-total{
+            font-weight: bold;
+            display: flex;
+            font-size: 1.2rem;
+            justify-content: space-between;
+        }
+    }
+
     h2{
         letter-spacing: 1px;
     }
@@ -13,6 +38,7 @@
     }
 
     .StripeElement{
+        width: 521.5px;
         padding: 16px 10px;
         border: 0.5px solid rgb(233, 233, 233);
     }
@@ -88,3 +114,4 @@
 
     
 }
+

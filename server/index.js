@@ -1,5 +1,7 @@
 // const { email } = require('./emailController');
 
+const { orderHistory } = require('./orderHistoryController');
+
 require('dotenv').config();
 
 const express = require('express'),
@@ -11,7 +13,9 @@ const express = require('express'),
       authCtrl = require('./logincontroller'),
       homeCtrl = require('./homeController'),
       emailCtrl = require('./emailController'),
-      stripe = require('stripe')(STRIPE_SECRET_KEY),
+      OrderCtrl = require('./orderHistoryController');
+    //   stripe = require('stripe')(STRIPE_SECRET_KEY),
+      invCtrl = require('./inventoryController'),
       stripeCtrl = require('./stripeController');
       app = express();
 app.use(express.json());
@@ -69,11 +73,16 @@ app.get('/api/LikeAccessories/:description', prodCtrl.LikeAccessories);
 app.get('/api/getMensProducts', homeCtrl.maleHomePage);
 app.get('/api/getWomensProducts', homeCtrl.femaleHomePage);
 
+//profile endpoints
+app.get('/api/OrderHistory', OrderCtrl.orderHistory);
+
 //email endpoints
 app.post('/api/email', emailCtrl.email);
 
 //Stripe Element to handle payment in house
 app.post('/api/charge', stripeCtrl.charge);
+
+app.post('/api/purchasedItems', invCtrl.logOrder);
 
 //stripe endpoint to take to stripe ui
 app.post('/api/payments', async(req,res) => {

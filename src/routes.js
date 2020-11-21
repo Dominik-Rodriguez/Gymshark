@@ -12,6 +12,7 @@ import Accessory from './Components/Accessories/Accessory';
 import Success from './Components/StripeOutcomes/success';
 import Failure from './Components/StripeOutcomes/failure';
 import Payments from './Components/StripeElements/Payments';
+import OrderHistory from './Components/OrderHistory/OrderHistory';
 
 export default(
     <Switch>
@@ -27,5 +28,6 @@ export default(
         <Route path="/Success" component={Success} />
         <Route path='/Failure' component={Failure} />
         <Route path="/Payment" component={Payments} />
+        <Route path="/profileInfo" component={OrderHistory} />
     </Switch>
 )

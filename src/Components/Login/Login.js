@@ -9,7 +9,6 @@ class Login extends React.Component{
 
         this.state = {
             email: '',
-            // username: '',
             password: '',
             verPassword: '',
             registerView: false
@@ -50,7 +49,7 @@ class Login extends React.Component{
             .post('/api/login', {email, password})
             .then((res) => {
                 // this.props.getUser(res.data);
-                this.props.history.push('/');
+                this.props.history.push('/profileInfo');
         });
     };
 
