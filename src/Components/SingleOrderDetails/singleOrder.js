@@ -34,7 +34,7 @@ class singleOrder extends React.Component{
         return(
             <div className="SingleOrder">
                 <h2>ORDER #{this.props.match.params.id}</h2>
-                <Link to="/profileInfo">
+                <Link to="/profileInfo" className="links">
                     <p className="ReturnButton">Return To Account Details </p>
                 </Link>
                 <table className="OrdersTable">
