@@ -29,7 +29,19 @@ create table Users(
     user_id serial primary key,
     password text,
     email text,
-    username varchar(20)
+    username varchar(20),
+    alter table users
+    add first_name varchar(50)
+    alter table users
+    add last_name varchar(50)
+    alter table users
+    add address varchar(100)
+    alter table users
+    add city varchar(100)
+    alter table users
+    add country varchar(50)
+    alter table users
+    add state varchar(50)
 )
 
 create table orders(
@@ -48,3 +60,13 @@ create table orders(
         foreign key (order_id) 
             references users(user_id)
 );
+
+create table PurchasedProducts(
+    order_number int references orders(order_id),
+    name varchar(255),
+    description varchar(255),
+    img text,
+    color varchar(50),
+    price decimal,
+    order_date text
+)

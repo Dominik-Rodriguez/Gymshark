@@ -50,6 +50,7 @@ class Cart extends React.Component{
     }
 
     render(){
+        console.log(this.props.cart.items, 'items');
         const mappedItems = this.props.cart.items.map((product, i) => (
                 <tr className="productInfoColumns">
                     <td className="totalColumn">

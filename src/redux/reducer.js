@@ -143,15 +143,14 @@ const reducer = (state = initialState, action) => {
             updatedItemIndex = state.cart.items.findIndex((item) => {
                 return payload.item_id === item.item_id;
             })
-
             let [removeItem] = state.cart.items.splice(updatedItemIndex, 1);
             updatedCart.totalNumItems -= 1;
 
             return{
                 ...state, cart:{
                     items: [...state.cart.items],
-                    totalPrice: state.cart.totalPrice - removeItem.price,
-                    totalNumItems: state.cart.totalNumItems - 1
+                    totalPrice: state.cart.totalPrice - removeItem.price * removeItem.quantity,
+                    totalNumItems: state.cart.totalNumItems - removeItem.quantity
                 }
             }
 

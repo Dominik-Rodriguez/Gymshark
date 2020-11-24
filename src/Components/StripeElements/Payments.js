@@ -44,8 +44,6 @@ const CheckoutForm = (props) => {
         email: ''
     });
 
-    const [date, setDate] = useState(new Date());
-
     const handleFocus = () => {
         console.log('[focus]');
     };
@@ -71,23 +69,6 @@ const CheckoutForm = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // const firstName = cState.firstName;
-        // const lastName = cState.lastName;
-        // const email = cState.email;
-        // const cState = cState.cState;
-        // const zip = cState.zip;
-        // const address = cState.address;
-        // const city = cState.city;
-        // const {totalPrice} = props.cart;
-        // const {totalNumItems} = props.cart;
-        // const {firstName, lastName, email, cState, zip, address, city} = cState;
-
-        // axios
-        // .post('/api/purchasedItems', {
-        //     firstName, lastName, email, city, zip, address, totalPrice, totalNumItems, date
-        // })
-        // .then(res => {})
-        // .catch(err => console.log(err));
 
         const {error, paymentMethod} = await stripe.createPaymentMethod({
             type: 'card',
@@ -103,8 +84,7 @@ const CheckoutForm = (props) => {
                 props.success();
                 console.log(response);
             } catch (error) {
-                alert(error.message)
-                // console.log(error);
+                alert(error.message);
             }
         }
     }
@@ -138,6 +118,7 @@ const Checkout = (props) => {
         zip: '',
         email: ''
     });
+    const [orderId, setOrderId] = useState(null);
 
     const checkInput = (e) => {
         if(cState.firstName === '' || cState.lastName === '' || cState.address === '' || cState.city === '' || cState.state === '' || cState.zip === ''){
@@ -153,8 +134,8 @@ const Checkout = (props) => {
 
     useEffect(() => {
         if (status === 'success'){
-            props.clearCart();
-            props.history.push('/success');
+            // props.clearCart();
+            props.history.push('/success' + '/' + orderId);
         }
     }, [status])
 
@@ -172,19 +153,22 @@ const Checkout = (props) => {
         const zip = cState.zip;
         const address = cState.address;
         const city = cState.city;
-        const totalPrice = total;
+        const totalPrice = total.toFixed(2);
         const totalNumItems = numberOfItems;
 
         axios
-        .post('/api/purchasedItems', {
+        // .post('/api/purchasedItems', {
+        .post('/api/orderUserInfo', {
             firstName, lastName, email, city, state, zip, address, totalPrice, totalNumItems, date
         })
-        .then(res => {})
-        .catch(err => console.log(err));
+        .then(res => {setOrderId(res.data.order_id)
+            setStatus('success')})
+        .catch(err => props.history.push('/failure'));
 
-        // console.log(cState);
-        setStatus('success')
+        // setStatus('success')
     }
+
+    console.log(props);
 
     return(
         <div className="checkout-Form">
@@ -276,6 +260,7 @@ const Checkout = (props) => {
                         placeholder="84101"
                     />
                 </div>
+                <p>{orderId}</p>
             </div>
             <Elements stripe={stripePromise}>
                 <CheckoutForm

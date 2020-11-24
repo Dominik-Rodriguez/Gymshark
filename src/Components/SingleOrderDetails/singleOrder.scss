@@ -1,0 +1,47 @@
+.SingleOrder{
+    padding-top: 70px;
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    // align-content: center;
+    flex-direction: column;
+
+    .ReturnButton{
+        text-align: left;
+        width: 88.5vw;
+        margin-top: 0px;
+    }
+
+    .OrdersTable{
+        border-collapse: collapse;
+        border-spacing: 0;
+        margin-bottom: 30px;
+        display: table-cell;
+        .tableHeader{
+            text-align: left;
+            background-color: #eeeeee;
+            height: 35px;
+            padding: 17px 20px;
+            font-size: 1.1rem;
+            font-weight: 400;
+            th{
+                text-align: left;
+                padding-left: 25px;
+                 width: 20vw;
+            }
+        }
+
+        .itemInfo{
+            text-transform: capitalize;
+        }
+
+        td{
+            display: table-cell;
+            border: 1px solid #eee;
+            font-size: 1.0rem;
+            padding: 6px 12px;
+            padding-left: 25px;
+            text-align: left;
+        }
+    }
+}

@@ -75,6 +75,8 @@ app.get('/api/getWomensProducts', homeCtrl.femaleHomePage);
 
 //profile endpoints
 app.get('/api/OrderHistory', OrderCtrl.orderHistory);
+app.get('/api/userInfo', OrderCtrl.userInfo);
+app.get('/api/singleOrder/:id', OrderCtrl.singlePurchase);
 
 //email endpoints
 app.post('/api/email', emailCtrl.email);
@@ -82,7 +84,9 @@ app.post('/api/email', emailCtrl.email);
 //Stripe Element to handle payment in house
 app.post('/api/charge', stripeCtrl.charge);
 
-app.post('/api/purchasedItems', invCtrl.logOrder);
+// app.post('/api/purchasedItems', invCtrl.logOrder);
+app.post('/api/orderUserInfo', invCtrl.logOrder);
+app.post('/api/purchasedItems', invCtrl.logItems);
 
 //stripe endpoint to take to stripe ui
 app.post('/api/payments', async(req,res) => {

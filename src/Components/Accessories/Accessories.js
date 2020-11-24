@@ -25,7 +25,7 @@ class Accessories extends React.Component{
     render(){
         const mappedProducts = this.state.products.map((product, i) => (
             <Link to={`/accessory/${product.item_id}`} className="links">
-                <div className="productBox">
+                <div className="productBox" key={i}>
                     <img src={product.img} alt="item image" className="productImg" />
                     <div className="toptxt">
                         <p className="description">{product.description}</p>

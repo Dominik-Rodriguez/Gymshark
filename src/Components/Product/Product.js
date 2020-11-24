@@ -88,7 +88,7 @@ class Product extends React.Component {
     const { color, description, img, item_id, name, price} = this.state.product;
 
     const mappedLikeProducts = this.state.likeProducts.map((product, i) => (
-      <div className="MPlikeProductPhotos">
+      <div className="MPlikeProductPhotos" key={i}>
         <a>
           <img
             src={product.img}
@@ -101,7 +101,6 @@ class Product extends React.Component {
         </a>
       </div>
     ));
-    console.log(this.props);
     return (
       <div className="Product">
         <div className="productBox">

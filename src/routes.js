@@ -13,6 +13,7 @@ import Success from './Components/StripeOutcomes/success';
 import Failure from './Components/StripeOutcomes/failure';
 import Payments from './Components/StripeElements/Payments';
 import OrderHistory from './Components/OrderHistory/OrderHistory';
+import singleOrder from './Components/SingleOrderDetails/singleOrder';
 
 export default(
     <Switch>
@@ -25,9 +26,10 @@ export default(
         <Route path='/accessory/:id' component={Accessory} />
         <Route path='/cart' component={Cart} />
         <Route path="/Login" component={Login}/> 
-        <Route path="/Success" component={Success} />
+        <Route path="/Success/:id" component={Success} />
         <Route path='/Failure' component={Failure} />
         <Route path="/Payment" component={Payments} />
         <Route path="/profileInfo" component={OrderHistory} />
+        <Route path="/OrderDetails/:id" component={singleOrder} />
     </Switch>
 )

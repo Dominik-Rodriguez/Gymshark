@@ -11,6 +11,12 @@ class Login extends React.Component{
             email: '',
             password: '',
             verPassword: '',
+            firstName: '',
+            lastName: '',
+            address: '',
+            city: '',
+            country: '',
+            state: '',
             registerView: false
         };
     }
@@ -30,13 +36,12 @@ class Login extends React.Component{
     // }
 
     handleRegister = () => {
-        const {email, password, verPassword} = this.state;
+        const {email, password, verPassword, firstName, lastName, address, city, country, state} = this.state;
         if(password && password === verPassword){
             axios
-                .post('/api/register', {email, password})
+                .post('/api/register', {email, password, firstName, lastName, address, city, country, state})
                 .then((res) => {
-                    // this.props.getUser(res.data);
-                    this.props.history.push('/')
+                    this.props.history.push('/profileInfo');
                 }) .catch((err) => console.log(err));
         } else {
             alert('Passwords do not match.');
@@ -50,10 +55,11 @@ class Login extends React.Component{
             .then((res) => {
                 // this.props.getUser(res.data);
                 this.props.history.push('/profileInfo');
-        });
+        }).catch(err => alert('Email or password is incorrect.'))
     };
 
     render(){
+        console.log(this.state.firstName);
         return(
             <div className="loginPage">
                 <div className="login">
@@ -65,34 +71,105 @@ class Login extends React.Component{
                                 <p>orders, save products and access easier returns</p>
                             </>
                         ) : (
-                            <h3>LOG INTO MY GYMSHARK</h3>
+                            <>
+                                <h3>LOG INTO MY GYMSHARK</h3>
+                                <h5>EMAIL ADDRESS:</h5>
+                                <input 
+                                    value={this.state.email}
+                                    name='email'
+                                    className="email"
+                                    onChange={(e) => this.handleInput(e)}    
+                                />
+                                <h5>PASSWORD: </h5>
+                                <input 
+                                    value={this.state.password}
+                                    name='password'
+                                    type="password"
+                                    className="password"
+                                    onChange={(e) => this.handleInput(e)}
+                                />
+                            </>
                         )}
-                        <h5>EMAIL ADDRESS:</h5>
-                        <input 
-                            value={this.state.email}
-                            name='email'
-                            // placeholder='Email'
-                            className="email"
-                            onChange={(e) => this.handleInput(e)}    
-                        />
-                        <h5>PASSWORD: </h5>
-                        <input 
-                            value={this.state.password}
-                            name='password'
-                            type="password"
-                            // placeholder="Password"
-                            className="password"
-                            onChange={(e) => this.handleInput(e)}
-                        />
                         {this.state.registerView ? (
                             <>
-                            <h5>VERIFY PASSWORD: </h5>
+                            <h5>FIRST NAME: </h5>
+                                <input 
+                                    value={this.state.firstName}
+                                    type="firstName"
+                                    className="firstName"
+                                    name="firstName"
+                                    onChange={(e) => this.handleInput(e)}
+                                />
+                                
+                                <h5>LAST NAME: </h5>
+                                <input 
+                                    className="lastName"
+                                    value={this.state.lastName}
+                                    type="lastName"
+                                    name="lastName"
+                                    onChange={(e) => this.handleInput(e)}
+                                />
+                               
+                               <h5>EMAIL ADDRESS:</h5>
+                                <input 
+                                    value={this.state.email}
+                                    name='email'
+                                    type="email"
+                                    className="email"
+                                    onChange={(e) => this.handleInput(e)}    
+                                />
+
+                                <h5>ADDRESS: </h5>
+                                <input 
+                                    className="address"
+                                    type="text"
+                                    value={this.state.address}
+                                    name="address"
+                                    onChange={(e) => this.handleInput(e)}
+                                />
+
+                                <h5>CITY: </h5>
+                                <input 
+                                    className="city"
+                                    type="city"
+                                    value={this.state.city}
+                                    name="city"
+                                    onChange={(e) => this.handleInput(e)}
+                                />
+                                
+                                <h5>STATE: </h5>
+                                <input 
+                                    className="state"
+                                    type="text"
+                                    value={this.state.state}
+                                    name="state"
+                                    onChange={(e) => this.handleInput(e)}
+                                />
+                                
+                                <h5>COUNTRY: </h5>
+                                <input 
+                                    className="COUNTRY"
+                                    type="text"
+                                    value={this.state.country}
+                                    name="country"
+                                    onChange={(e) => this.handleInput(e)}
+                                />
+                                
+                                <h5>PASSWORD: </h5>
+                                <input 
+                                    value={this.state.password}
+                                    name='password'
+                                    type="password"
+                                    className="password"
+                                    onChange={(e) => this.handleInput(e)}
+                                />
+
+                                <h5>VERIFY PASSWORD: </h5>
                                 <input 
                                     className="verPassword"
                                     type="password"
                                     value={this.state.verPassword}
                                     name="verPassword"
-                                    // placeholder="Verify password"
                                     onChange={(e) => this.handleInput(e)}
                                 />
                                 <button onClick={this.handleRegister} className="login">
